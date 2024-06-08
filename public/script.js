@@ -19,89 +19,43 @@ variations appear in both the responses given by the AI 'BUDDY' as well as the o
 encourage the people interacting with the experience to keep going to see how the situation will unfold. */
 
 var conversation;
+
 function getConversation(name) {
-    return {
-        currentScene: "introduction",
-        introduction: {
-            conversation: `Hello ${name}, Please select what you wish to do.`,
-            image: "/images/intro.png",
-            choices: [
-                {
-                    choice: "INTERVIEW PRACTICE",
-                    destination: 'goodfeel'
-                },
-                {
-                    choice: "FREQUENTLY ASKED QUESTIONS AND SUGGESTED ANSWERS",
-                    destination: 'badfeel'
-                }
-            ]
-        },
-        introduction2: {
-            conversation: `Hello ${name}, my name is BACCHUS. How are you today?`,
-            choices: [
-                {
-                    choice: "GOOD",
-                    destination: 'goodfeel'
-                },
-                {
-                    choice: "BAD",
-                    destination: 'badfeel'
-                }
-            ]
-        },
-        introduction3: {
-            conversation: `Hello ${name}, my name is HIPPOCRATES. How are you today?`,
-            choices: [
-                {
-                    choice: "GOOD",
-                    destination: 'goodfeel'
-                },
-                {
-                    choice: "BAD",
-                    destination: 'badfeel'
-                }
-            ]
-        },
-        introduction4: {
-            conversation: `Hello ${name}, my name is CASSANDRA. How are you today?`,
-            choices: [
-                {
-                    choice: "GOOD",
-                    destination: 'goodfeel'
-                },
-                {
-                    choice: "BAD",
-                    destination: 'badfeel'
-                }
-            ]
-        },
-        introduction5: {
-            conversation: `Hello ${name}, my name is APOLLO. How are you today?`,
-            choices: [
-                {
-                    choice: "GOOD",
-                    destination: 'goodfeel'
-                },
-                {
-                    choice: "BAD",
-                    destination: 'badfeel'
-                }
-            ]
-        },
-            goodfeel: {
-                conversation: `I am happy to hear that! Have you done anything interesting lately?`,
-                choices: [
-                    {
-                        choice: "YES",
-                        destination: 'hobbyes'
-                    },
-                    {
-                        choice: "NO",
-                        destination: 'hobbyno'
-                    }
-                ]
+   return {
+      currentScene: "introduction",
+      introduction: {
+         conversation: `Hello ${name}, Please select what you wish to do.`,
+         image: "/public/images/intro.png",
+         choices: [
+            {
+               choice: "INTERVIEW PRACTICE",
+               destination: 'intpracstart'
             },
-                hobbyes: {
+            {
+               choice: "FREQUENTLY ASKED QUESTIONS AND SUGGESTED ANSWERS",
+               destination: 'faqans'
+            }
+         ]
+      },
+         intpracstart: {
+         conversation: `For the 'Interview Practice', you will be asked a series of questions where you will have to select the answer that you believe is the most fitting and will land you a job. Your results will be given after the last question.`,
+         defaultDestination: 'intprac1',
+         buttonText: "START"
+      },
+         intprac1: {
+            conversation: `Tell me about yourself.`,
+            choices: [
+               {
+                  choice: "YES",
+                  destination: 'hobbyes'
+               },
+               {
+                  choice: "NO",
+                  destination: 'hobbyno'
+               }
+            ]
+         },
+             hobbyes: {
                     conversation: `That's great! I've recently been reading through the 'Walter Freeman and James Watts Collection', especially the 'Walter Freeman papers'! It's so interesting! Do you have any interesting hobbies?`,
                     choices: [
                         {

@@ -13,19 +13,23 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    text-align: center;
+}
+
 h4 {
     text-align: center;
 }
 
 button {
-    color: #dbdbdb;
-    text-shadow: 0 0 4px #dbdbdb;
-    font-size: 2.2vh;
+    color: #1c242c;
+    font-size: 4vh;
     font-family: 'Apple II';
     line-height: 4vh;
-    background-image: radial-gradient(#262626, #262626 120%);
+    background-image: radial-gradient(#d3cebe, #d3cebe 120%);
     display: block;
-    margin-top: 1vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     cursor: pointer;
 }
 /* The buttons are made to be a similar colour to the actual background because I want to give the entire thing an early-in-the-computing-days 
@@ -38,18 +42,13 @@ eyes, unless of course your eyes are very bad at picking up hues. */
 there as somewhere you can type, but since the radio options in the experience are also inputs I decided to go with the pointer cursor instead. */
 
 input {
-    color: #dbdbdb;
-    text-shadow: 0 0 4px #dbdbdb;
-    font-size: 2vh;
+    color: #1c242c;
+    font-size: 4vh;
     font-family: "Apple II";
-    /* text-transform: uppercase; */
-    /* I was planning on having the text for the name to always be inputted in uppercase letters, but then I couldn't and didn't have the time 
-    to figure out how to keep it in uppercase letters throughout the rest of the experience, so I had to scrap that idea to keep the continuity 
-    of the experience's styling. */
     line-height: 4vh;
-    background-image: radial-gradient(#262626, #262626 120%);
+    background-image: radial-gradient(#d3cebe, #d3cebe 120%);
     display: block;
-    margin-top: 1vh;
+    margin-top: 2vh;
     cursor: pointer;
 }
 /* The input name function is present once in the entire experience and never shows again, but it's important since it is what the users will type 
@@ -63,12 +62,12 @@ behaviour of pressing that and press the button below instead. :(  But it's okay
 Colour choices were made for the same reason as the buttons. I didn't want anything to stick out too much against the terminal-esque look I was going for. */
 
 body {
-    color: #dbdbdb;
-    text-shadow: 0 0 4px #dbdbdb;
-    font-size: 2.2vh;
+    color: #1c242c;
+    text-shadow: 0 0 4px #d3cebe;
+    font-size: 4vh;
     font-family: 'Apple II';
     line-height: 4vh;
-    background-image: radial-gradient(#323232, #000000 120%);
+    background-color:#8ab9ee;
     margin-top: 5vh;
     margin-left: 5vh;
     margin-right: 5vh;
@@ -83,11 +82,11 @@ but if I've managed to capture any of that I'll consider it an accomplishment. *
 body::after {
     content: '';
     position: fixed;
+    font-size: 4vh;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(#32323288 0.5vh, #0000000d 0.8vh);
     z-index: -1;
 }
 /* This is made so that the old terminal-like quality and appearance is further enhanced. If you look closely enough at some terminal screens, there 
@@ -95,3 +94,13 @@ are these thin lines that repeatedly run horizontally across the screen. It's a 
 and look I'm aiming for. 'The devil is in the detail' and all that, after all. */
 
 /* Nothing else is really added to the CSS file cause I'm a big believer of 'less is more' for this project. */
+
+div{
+    background-color: #dbdbdb;
+    font-size: 4vh;
+    margin-top: 5vh;
+}
+
+img{
+    align-items: right;
+}
