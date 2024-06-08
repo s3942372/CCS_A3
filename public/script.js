@@ -24,6 +24,7 @@ function getConversation(name) {
         currentScene: "introduction",
         introduction: {
             conversation: `Hello ${name}, Please select what you wish to do.`,
+            image: "/images/intro.png",
             choices: [
                 {
                     choice: "INTERVIEW PRACTICE",
