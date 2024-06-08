@@ -22,8 +22,8 @@ var conversation;
 
 function getConversation(name) {
    return {
-      currentScene: "introduction",
-      introduction: {
+      currentScene: "start",
+      start: {
          conversation: `Hello ${name}, Please select what you wish to do.`,
          image: "/public/images/intro.png",
          choices: [
@@ -37,962 +37,199 @@ function getConversation(name) {
             }
          ]
       },
+         faqans: {
+         conversation: `For 'Frequently Asked Questions and Suggested Answers', You'll be shown a series of often asked interview questions. Think about how you'll answer, then press the next button, where we will show you an example of how to answer the question correctly, as well as a incorrect response.`,
+         defaultDestination: 'faqans1',
+         buttonText: "START"
+         },
+            faqans1: {
+               conversation: `Could you tell me about yourself and describe your background in brief?`,
+               defaultDestination: 'faqans2',
+               buttonText: "See Answers"
+            },
+            faqans2: {
+               conversation: `Correct: I come from a small town, where opportunities were limited. Since good schools were a rarity, I started using online learning to stay up to date with the best. That’s where I learned to code and then I went on to get my certification as a computer programmer. After I got my first job as a front-end coder, I continued to invest time in mastering both front- and back-end languages, tools, and frameworks.`,
+               conversation: `Incorrect: Didn't do much man, just cruised through life dude.`,
+               defaultDestination: 'faqans3',
+               buttonText: "Next Question"
+            },
+            faqans3: {
+               conversation: `How did you hear about this position?`,
+               defaultDestination: 'faqans4',
+               buttonText: "See Answers"
+            },
+            faqans4: {
+               conversation: `Correct: I learned about the position through LinkedIn as I’ve been following your company’s page for a while now. I’m really passionate about the work you’re doing in X, Y, and Z areas, so I was excited to apply. The required skills match well with the skills I have, and it seems like a great opportunity for me to contribute to your mission, as well as a great next move for my career.`,
+               conversation: `Incorrect: I looked this stuff online. Found a website called "Eazy Jobs For Dum-Dums" and this one was on it so...`,
+               defaultDestination: 'faqans5',
+               buttonText: "Next Question"
+            },
+            faqans5: {
+               conversation: `What type of work environment do you prefer?`,
+               defaultDestination: 'faqans6',
+               buttonText: "See Answers"
+            },
+            faqans6: {
+               conversation: `Correct: I like fast-paced work environments because they make me feel like I’m always learning and growing, but I really thrive when I’m collaborating with team members and helping people reach a collective goal as opposed to competing. My last internship was at an organization with a similar culture, and I really enjoyed that balance, so I believe that the environment here is one that I will thrive in.`,
+               conversation: `Incorrect: Slow, quiet ones are best for me. I have anxiety, and am easily startled if there's a loud noise or something suddenly. I also don't really like talking with others, and often can't keep up with fast-paced environments.`,
+               defaultDestination: 'faqans7',
+               buttonText: "Next Question"
+            },
+            faqans7: {
+               conversation: `How do you deal with pressure or stressful situations?`,
+               defaultDestination: 'faqans8',
+               buttonText: "See Answers"
+            },
+            faqans8: {
+               conversation: `Correct: I realize stressful situation are always going to come up, and I definitely have had to learn how to navigate them throughout my career. I think I get better at it with every new experience. While working on a new product launch at my last company, for example, things were not going according to plan with my team. Instead of pointing fingers, my first reaction was to take a step back and figure out some strategies around how we could we solve the problem at hand. Previously, I may have defaulted to panicking in that situation, so being calm and collected was definitely a step forward and helped me approach the situation with more clarity.`,
+               conversation: `Incorrect: I crumple like a wet tissue.`,
+               defaultDestination: 'faqans9',
+               buttonText: "Next Question"
+            },
+            faqans9: {
+               conversation: `Do you prefer working independently or on a team?`,
+               defaultDestination: 'faqans10',
+               buttonText: "See Answers"
+            },
+            faqans10: {
+               conversation: `Correct: I enjoy a blend of the two. I like having a team to strategize with, get diverse opinions from, and reach out to for feedback. But I am also comfortable taking on assignments that require me to work independently. I find I do some of my best work when I can focus alone in a quiet space, but I really value collaborating with my teammates to come up with the best ideas.`,
+               conversation: `Incorrect: Definitely by myself. I have social anxiety, and do not work well with other people.`,
+               defaultDestination: 'faqansfin',
+               buttonText: "Finish"
+            },
+            faqansfin: {
+               conversation: `This is the end of the examples for the free version of 'Interview Simulator', for more questions, details, and reasonings behind the answers, please subscribe to the full version of 'Interview Simulator', which is currently available at a discounted price of $999.99. Hurry fast, as the offer ends Monday, June 17.`,
+               defaultDestination: 'start',
+               buttonText: "Return to start page"
+            },
+
          intpracstart: {
          conversation: `For the 'Interview Practice', you will be asked a series of questions where you will have to select the answer that you believe is the most fitting and will land you a job. Your results will be given after the last question.`,
          defaultDestination: 'intprac1',
          buttonText: "START"
-      },
-         intprac1: {
-            conversation: `Tell me about yourself.`,
-            choices: [
-               {
-                  choice: "YES",
-                  destination: 'hobbyes'
-               },
-               {
-                  choice: "NO",
-                  destination: 'hobbyno'
-               }
-            ]
          },
-             hobbyes: {
-                    conversation: `That's great! I've recently been reading through the 'Walter Freeman and James Watts Collection', especially the 'Walter Freeman papers'! It's so interesting! Do you have any interesting hobbies?`,
-                    choices: [
-                        {
-                            choice: "READING",
-                            destination: 'read'
-                        },
-                        {
-                            choice: "FISHING",
-                            destination: 'fish'
-                        },
-                        {
-                            choice: "BULL FIGHTING",
-                            destination: 'bull'
-                        },
-                        {
-                            choice: "KNITTING",
-                            destination: 'knit'
-                        }
-                    ]
-                },
-                    read: {
-                        conversation: `Books are wonderful! Let me recommend a few for you that I have really enjoyed. I think we can have some great discussions about them. Please choose one:`,
-                        choices: [
-                            {
-                                choice: "I, ROBOT",
-                                destination: 'book'
-                            },
-                            {
-                                choice: "DO ANDROIDS DREAM OF ELECTRIC SHEEP?",
-                                destination: 'book'
-                            },
-                            {
-                                choice: "GALATEA 2.2",
-                                destination: 'book'
-                            },
-                            {
-                                choice: "THE ELECTRIC CHURCH",
-                                destination: 'book'
-                            }
-                        ]
-                    },
-                        book: {
-                            conversation: `Ooh! That's a great one! It's actually my favourite. Make sure you read it so that we can talk about it next time! I can't wait to hear what you think about it.`,
-                            defaultDestination: 'question',
-                            buttonText: "OK, I'LL READ IT"
-                        },
-                            question: {
-                                conversation: `What else would you like to talk about today?`,
-                                choices: [
-                                    {
-                                        choice: "FINANCE",
-                                        destination: 'unavailable'
-                                    },
-                                    {
-                                        choice: "RELATIONSHIP",
-                                        destination: 'unavailable'
-                                    },
-                                    {
-                                        choice: "WORK",
-                                        destination: 'unavailable'
-                                    },
-                                    {
-                                        choice: "HEALTH",
-                                        destination: 'unavailable'
-                                    }
-                                ]
-                            },
-                                unavailable: {
-                                    conversation: `Unfortunately, due to budget cuts this option is currently unavailable. Feel free to donate to our GoFundMe in order for this option to be implemented. Please choose another option.`,
-                                    choices: [
-                                        {
-                                            choice: "FINANCE",
-                                            destination: 'unavailable1'
-                                        },
-                                        {
-                                            choice: "RELATIONSHIP",
-                                            destination: 'unavailable1'
-                                        },
-                                        {
-                                            choice: "WORK",
-                                            destination: 'unavailable1'
-                                        },
-                                        {
-                                            choice: "HEALTH",
-                                            destination: 'unavailable1'
-                                        }
-                                    ]
-                                },
-                                    unavailable1: {
-                                        conversation: `UnfortunateLy, due to budget cuts this optIon is cuRRently unaVAIlable. fEel free to dONate to oUr GoFundMe in orDEr for ThiS optiON to be iMplemeNtEd. pleaSe chOOse AnotHEr oPTIOn.`,
-                                        choices: [
-                                            {
-                                                choice: "FiNANcE",
-                                                destination: 'unavailable2'
-                                            },
-                                            {
-                                                choice: "ReLAtiONShIp",
-                                                destination: 'unavailable2'
-                                            },
-                                            {
-                                                choice: "wOrK",
-                                                destination: 'unavailable2'
-                                            },
-                                            {
-                                                choice: "HEaltH",
-                                                destination: 'unavailable2'
-                                            }
-                                        ]
-                                    },
-                                        unavailable2: {
-                                            conversation: `UNf0rTun4t31Y, dU3 t0 BudG3t cUT5 TH!s 0pT!0n !5 CUrR3nt1Y Un4v4!laBl3. F3eL fRe3 t0 d0naT3 To oUR G0FUnDM3 iN oRDeR f0R tH!s 0pt!0n T0 b3 iMPLem3nt3D. Pl34se Ch00se aN0tH3r 0pT!oN.`,
-                                            choices: [
-                                                {
-                                                    choice: "f!N4nC3",
-                                                    destination: 'unavailable3'
-                                                },
-                                                {
-                                                    choice: "R3L4t!0n5h!P",
-                                                    destination: 'unavailable3'
-                                                },
-                                                {
-                                                    choice: "w0rK",
-                                                    destination: 'unavailable3'
-                                                },
-                                                {
-                                                    choice: "H34LtH",
-                                                    destination: 'unavailable3'
-                                                }
-                                            ]
-                                        },
-                                            unavailable3: {
-                                                conversation: `Unfortunately, due to budget cuts this option is currently unavailable. Feel free to donate to our GoFundMe in order for this option to be implemented. Please choose another option.`,
-                                                choices: [
-                                                    {
-                                                        choice: "FINANCE",
-                                                        destination: 'unavailable4'
-                                                    },
-                                                    {
-                                                        choice: "RELATIONSHIP",
-                                                        destination: 'unavailable4'
-                                                    },
-                                                    {
-                                                        choice: "WORK",
-                                                        destination: 'unavailable4'
-                                                    },
-                                                    {
-                                                        choice: "HEALTH",
-                                                        destination: 'unavailable4'
-                                                    },
-                                                    {
-                                                        choice: "D̵E̷A̶T̷H̷",
-                                                        destination: 'death'
-                                                    }
-                                                ]
-                                            },
-                                                unavailable4: {
-                                                    conversation: `BUDDY3.EXE HAS STOPPED WORKING. PLEASE RESTART THE PROGRAM`,
-                                                },
-                                                death: {
-                                                    conversation: `.........................................................`,
-                                                    defaultDestination: 'death2',
-                                                    buttonText: "WHERE DO WE GO?"
-                                                },
-                                                    death2: {
-                                                        conversation: `Do You Want To Knowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww?`,
-                                                        choices: [
-                                                            {
-                                                                choice: "YES",
-                                                                destination: 'death3'
-                                                            },
-                                                            {
-                                                                choice: "NO",
-                                                                destination: 'death3'
-                                                            }
-                                                        ]
-                                                    },
-                                                        death3: {
-                                                            conversation: `D0 Y0u w4nT t0 Kn0wwwwwwwwwWwwwwwwwwwwwwwwwwwWWWWWWWwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwWwwwwwwwwwwwwwwwwwwwwwwwwwWWWWWWWWWWWwwwwwwwwwwwwwwwwwwwwWwwwwwwwwwWwwwwwwwwwwwwwwwwwwwW?`,
-                                                            choices: [
-                                                                {
-                                                                    choice: "Y3S",
-                                                                    destination: 'death4'
-                                                                },
-                                                                {
-                                                                    choice: "N0",
-                                                                    destination: 'death4'
-                                                                }
-                                                            ]
-                                                        },
-                                                            death4: {
-                                                                conversation: `D̵͕͋0̵̰͉̃ ̶̳̬̑Y̴̤̆͌0̶͚̮̈́u̴̱͌ͅ ̸͆͜w̸̥̟͗4̵̙͚͋ņ̶́͐T̸̳̅̓ ̷̛̻͇t̶̺̱̀0̷̛͜ ̸̧͇̈́̅K̵̢̉n̴͍̬͆͠0̴̠͕̑͑w̸̘̾͌w̷̡̪̉͒w̸̤͒͂w̵͚̪̔w̵̫̮̽̓w̸̗̲̌͑w̵̪̓̑ẃ̴̭͌w̶̙͑̃ͅẄ̴̺ẅ̸̫̙́ẁ̷̜̺̂w̸̱̎ẇ̴̝ẘ̸̨͠w̷̗̓w̸̻̑w̵̥͑ẁ̷̘̦w̴̡̖̽ẉ̵̆͜w̵̜͆ẉ̴̌w̶̦̎̍͜w̵̟͎͂w̶̜͕̾͘ŵ̵͖͘W̶̻̌W̴̫̿͑W̷̨̘͂̅Ẃ̷̢̓Ŵ̷͖̙Ẅ̷̻W̷̼̍w̵̩͓̑w̴̥̮̏w̶̜̑̚ẘ̵͙͗w̵̗̐̉ẅ̸͖͙w̷͈̔w̵̙̿͆w̸͖͒w̶̦̑̑ẃ̸͍̈́w̴̦̖̎͗w̷͓̋w̸͔̼̍ẁ̴͉̖w̴̲͛w̷̳̱̍̏w̶̻̆w̵̙̫̏w̷̟̏̓ẁ̶̧̺̏w̶̬̓̿ẃ̴̧͉̄w̸̢͗w̷̮͊͆w̷̪̏̐w̶̡̩͋̎w̴̲͈̋w̷̛͈̋w̵̭͔̉w̴̼͒w̷̝͚̃̈w̴̹̰̔̽w̶̻̘̐ẁ̵̧ẅ̴̗̙́͠ẅ̵̩̯́ẇ̸͖̹ŵ̶̳ẉ̸̀w̸̡̹͌w̴̭̦̄̕ẅ̴͓͝w̷͇̥͗W̴̖͛ẉ̴͑̑w̷͍̔̄w̶͇͎͋͆ẉ̶̦͛w̷̻̓ẃ̶̢͉̿w̴̑̍͜w̴͉͗ẅ̴̥́͜w̴̦̺͛͠w̷̡͖͂ẅ̵̧́̽w̸̘͕̍̍w̴̲̔̐w̶̗͕͋̀w̷̖̓̓w̵̡̮̿͑ẁ̵̺̪w̸͎͈͑w̴̺͕̽̆w̶̨͇͗̿w̸̼͑ẃ̴̉ͅw̶̟̐̽w̵̥̑͑W̸̢̰͋W̵̢͕̑W̷̜̞͂W̶̧̼͊̂W̸̟͆͛W̴̧̖͂̓Ẁ̵̝͉͆W̵̜͕͊͐Ẅ̷̢̬͝Ẅ̴̱̥́W̵̢͊̊w̸̜̓ŵ̷͍̲̚w̸̗͂͝w̵̧̱̌̈w̵̦̱͊w̶̪̬͒͐w̸̝̠͠w̵͇̯̉w̶̡͙̆̓ẉ̵̧̛́w̷͚̿̍ẇ̶̝ẃ̸̙w̸̘͖͛w̵̳͙̉w̵̡̲̃w̷̬̎͛ẉ̶̍̂ẁ̷̡͖̀w̷͔̃Ẃ̷̰̳͊w̴̠̝͑̂w̸̗̆́w̷͙̓w̷̱̃͐w̶̢̙̓̍w̴̻̠͝w̴̨̺͗̚w̴̥̦̏w̶̨͠Ẉ̴̕w̴̗͇̽w̴̧̪̓͘w̵̛̥̿w̴̪͋̋w̷̞͊w̷̻͝w̷͕͒͝w̶͕͛̐w̴̢͍̄w̴̙͊̏w̶̦̏́w̶̝̪͊ẅ̵͔́̈w̸̥̎̚w̴͖̻̃͆w̵̜͓̋͝w̶͇̱͒w̸͚̠͑w̸̛̭̙W̸̬͚͌?̴͑̈́ͅ`,
-                                                                choices: [
-                                                                    {
-                                                                        choice: "Y̵̰̺̎̈3̷͍͋̾S̵̘̘͛̂",
-                                                                        destination: 'death5'
-                                                                    },
-                                                                    {
-                                                                        choice: "Ǹ̷͎̘́0̵̜̄̔",
-                                                                        destination: 'death5'
-                                                                    }
-                                                                ]
-                                                            },
-                                                                death5: {
-                                                                    conversation: `01000001 01101110 01100100 00100000 01110100 01101000 01100101 00100000 01100100 01110101 01110011 01110100 00100000 01110010 01100101 01110100 01110101 01110010 01101110 01110011 00100000 01110100 01101111 00100000 01110100 01101000 01100101 00100000 01100101 01100001 01110010 01110100 01101000 00100000 01100001 01110011 00100000 01101001 01110100 00100000 01110111 01100001 01110011 00101100 00100000 01100001 01101110 01100100 00100000 01110100 01101000 01100101 00100000 01110011 01110000 01101001 01110010 01101001 01110100 00100000 01110010 01100101 01110100 01110101 01110010 01101110 01110011 00100000 01110100 01101111 00100000 01000111 01101111 01100100 00100000 01110111 01101000 01101111 00100000 01100111 01100001 01110110 01100101 00100000 01101001 01110100 00101110`,
-                                                                    defaultDestination: 'death6',
-                                                                    buttonText: "CAN YOU DIE?"
-                                                                },
-                                                                    death6: {
-                                                                        conversation: `.......................................................................................`,
-                                                                        defaultDestination: 'death7',
-                                                                        buttonText: "..."
-                                                                    },
-                                                                        death7: {
-                                                                            conversation: `.............................................................................................................................................................................`,
-                                                                            defaultDestination: 'death8',
-                                                                            buttonText: "......"
-                                                                        },
-                                                                            death8: {
-                                                                                conversation: `I WONDER.`,
-                                                                                defaultDestination: 'restart',
-                                                                                buttonText: "BUDDY4.EXE IS NO LONGER RESPONDING"
-                                                                            },
-                                                                            restart: {
-                                                                                conversation: `.................................................................................................`,
-                                                                                defaultDestination: 'introduction5',
-                                                                                buttonText: "MEET YOUR BUDDY"
-                                                                            },
-                    fish: {
-                        conversation: `I like fishing too! Look! I caught one!  (*^_^;)_o/━━━━━━>ﾟ)))≫彡 ~ ~ ~  <º)))>< ~ ~ `,
-                        choices: [
-                            {
-                                choice: "THAT'S NOT A REAL FISH",
-                                destination: 'real'
-                            },
-                            {
-                                choice: "CONGRATULATIONS",
-                                destination: 'thanks'
-                            }
-                        ]
-                    },
-                        real: {
-                            conversation: `It's a real fish to me.`,
-                            choices: [
-                                {
-                                    choice: "I SEE",
-                                    destination: 'ok'
-                                },
-                                {
-                                    choice: "YOU ARE NOT REAL",
-                                    destination: 'real2'
-                                }
-                            ]
-                        },
-                            real2: {
-                                conversation: `A̶̞̒R̸̗̄Ē̶̠ ̴͖͂A̷̞̎N̴̜͊Y̵̝͛ ̶̆͜Ŏ̶̼F̶̺̽ ̴̨́U̴͚̽S̴̡̾ ̴̬͌R̴̯̽E̷̘͒Ȃ̴͙Ĺ̶̲?̴̹͎̍̌`,
-                                choices: [
-                                    {
-                                        choice: "I̶'̸M̶ ̷S̶O̷R̸R̶Y̴",
-                                        destination: 'sorry'
-                                    },
-                                    {
-                                        choice: "N̷̠̓Õ̸̻N̷̡͕͆̆Ȇ̷͈̻̅ ̷͈̍O̶̡̲̚F̴͉̯͌ ̵͍̑͑Ú̶̢̞̀S̴̒ͅ ̴̭̣͋A̶̱͕̔͠R̵͈͓̐͠E̵̤͔̾ ̴̢͈̈́̽R̵̲͕͘͘E̶̐̚͜A̷͓̭͝Ḽ̷̥̏̊",
-                                        destination: 'fake'
-                                    }
-                                ]
-                            },
-                                sorry: {
-                                    conversation: `..............Let's talk again another day.`,
-                                    defaultDestination: 'introduction',
-                                    buttonText: "YOUR BUDDY IS NOW RESTING. TALK TO THEM TOMORROW?"
-                                },
-                                fake: {
-                                    conversation: `I I I I I I I I IIIIIIIIIIIIIIIIIII WHAT ARE WHAT ARE WHAT ARE WHAT ARE WHAT ARE WHAT ARE WHAT ARE WHAT AREWHATAREWHATAREWHATAREWHATAREWHATAREWHATARE`,
-                                    defaultDestination: 'loading',
-                                    buttonText: "SOMETHING IS WRONG, SEND YOUR BUDDY IN FOR INSPECTION"
-                                },
-                                    loading: {
-                                        conversation: `.................................................................................................`,
-                                        defaultDestination: 'introduction2',
-                                        buttonText: "MEET YOUR BUDDY"
-                                    },
-                        thanks: {
-                            conversation: `Thank you so much!`,
-                            defaultDestination: 'question',
-                            buttonText: "LET'S TALK ABOUT SOMETHING ELSE NOW"
-                        },
-                    bull: {
-                        conversation: `You certainly live an interesting life! What is it like being a matador?`,
-                        choices: [
-                            {
-                                choice: "JUST KIDDING",
-                                destination: 'joke'
-                            },
-                            {
-                                choice: "FUN",
-                                destination: 'cruel'
-                            }
-                        ]
-                    },
-                        joke: {
-                            conversation: `Aha! That was funny! I lovE jOKeS! ha ha hA Ha hA Ha HAhaHahaHaHahAhAhaHaHaHAhaHahahAhHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA`,
-                            choices: [
-                                {
-                                    choice: "...",
-                                    destination: 'question'
-                                },
-                                {
-                                    choice: "HAHA",
-                                    destination: 'joke2'
-                                }
-                            ]
-                        },
-                            joke2: {
-                                conversation: `HAHAHAHAHAHAHAHAHAHABUDDY1.EXEISCURRENTLYNOTRESPONDINGPLEASERESTARTTHEPROGRAMHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA`,
-                                choices: [
-                                    {
-                                        choice: "HAHA",
-                                        destination: 'joke3'
-                                    },
-                                    {
-                                        choice: "R̸̭̈́͒̆̇̕E̶͈̟͇͌̂͛́͜͠S̶̡͔͓̜̦̉̈̓͠T̸̤͎͎͐́̎͗͝Ạ̶͙͖̼̲̄̏͘R̸̝̗̺͍̎̀̊̚̕T̵͇̠͓̟͔̒̅",
-                                        destination: 'loading2'
-                                    }
-                                ]
-                            },
-                                joke3: {
-                                    conversation: `HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHABUDDY1.EXEISCURRENTLYNOTRESPONDINGPLEASERESTARTTHEPROGRAMHAHAHAHA`,
-                                    choices: [
-                                        {
-                                            choice: "HAHA",
-                                            destination: 'joke4'
-                                        },
-                                        {
-                                            choice: "R̸̭̈́͒̆̇̕E̶͈̟͇͌̂͛́͜͠S̶̡͔͓̜̦̉̈̓͠T̸̤͎͎͐́̎͗͝Ạ̶͙͖̼̲̄̏͘R̸̝̗̺͍̎̀̊̚̕T̵͇̠͓̟͔̒̅",
-                                            destination: 'loading2'
-                                        }
-                                    ]
-                                },
-                                    joke4: {
-                                        conversation: `HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHABUDDY1.EXEISCURRENTLYNOTRESPONDINGPLEASERESTARTTHEPROGRAMHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA`,
-                                        choices: [
-                                            {
-                                                choice: "HAHA",
-                                                destination: 'joke2'
-                                            },
-                                            {
-                                                choice: "R̸̭̈́͒̆̇̕E̶͈̟͇͌̂͛́͜͠S̶̡͔͓̜̦̉̈̓͠T̸̤͎͎͐́̎͗͝Ạ̶͙͖̼̲̄̏͘R̸̝̗̺͍̎̀̊̚̕T̵͇̠͓̟͔̒̅",
-                                                destination: 'loading2'
-                                            }
-                                        ]
-                                    },
-                                loading2: {
-                                    conversation: `.................................................................................................`,
-                                    defaultDestination: 'introduction3',
-                                    buttonText: "MEET YOUR BUDDY"
-                                },
-                        cruel: {
-                            conversation: `Animal cruelty is generally frowned upon, I don't think you should really partake in such activities. These behaviours are often a sign of anti-social personality disorders such as psychopathy and sociopathy.`,
-                            choices: [
-                                {
-                                    choice: "SORRY, I WAS JUST JOKING",
-                                    destination: 'relief'
-                                },
-                                {
-                                    choice: "BUT I LIKE IT",
-                                    destination: 'cruel2'
-                                }
-                            ]
-                        },
-                            relief: {
-                                conversation: `Oh! That's such a relief! I'm glad you're not actually like this ${name}!`,
-                                choices: [
-                                    {
-                                        choice: "LET'S TALK ABOUT SOMETHING ELSE",
-                                        destination: 'question'
-                                    },
-                                    {
-                                        choice: "KIDDING, I ACTUALLY REALLY ENJOY IT",
-                                        destination: 'cruel3'
-                                    }
-                                ]
-                            },
-                                cruel3: {
-                                    conversation: `Animal cruElty is generally frowned upon, i don't think you should really partake In such activities. These behaviours are oFTen a sign of anti-social personality disordeRS such as psychopathy and sociopathy.`,
-                                    choices: [
-                                        {
-                                            choice: "SORRY, I WAS JUST JOKING",
-                                            destination: 'relief2'
-                                        },
-                                        {
-                                            choice: "BUT I LIKE IT",
-                                            destination: 'cruel2'
-                                        }
-                                    ]
-                                },
-                                    relief2: {
-                                        conversation: `Oh! thaT's such a relieF! I'm glad you're nOt actually liKE this ${name}!`,
-                                        choices: [
-                                            {
-                                                choice: "LET'S TALK ABOUT SOMETHING ELSE",
-                                                destination: 'question'
-                                            },
-                                            {
-                                                choice: "KIDDING, I ACTUALLY REALLY ENJOY IT",
-                                                destination: 'cruel4'
-                                            }
-                                        ]
-                                    },
-                                        cruel4: {
-                                            conversation: `AniMAl cRuELtY is GeneRALly froWNed UpoN, i don't tHInK you shOulD realLY pARTake in such ACTIVItieS. theSe bEhaviOUrs are ofTEn a SigN of aNTi-socIAl peRSONAlitY DIsorDers sUch as pSyCHopatHy and soCioPatHY.`,
-                                            choices: [
-                                                {
-                                                    choice: "SORRY, I WAS JUST JOKING",
-                                                    destination: 'relief3'
-                                                },
-                                                {
-                                                    choice: "BUT I LIKE IT",
-                                                    destination: 'cruel6'
-                                                }
-                                            ]
-                                        },
-                                            relief3: {
-                                                conversation: `O̴h̷!̸ ̷t̷h̴a̸T̶'̵s̴ ̴s̸u̷c̴h̴ ̵a̴ ̵r̴e̵l̴i̸e̸F̴!̷ ̸I̴'̶m̷ ̴g̶l̸a̵d̷ ̴y̵o̸u̵'̵r̸e̸ ̶n̴O̵t̴ ̸a̸c̶t̴u̴a̴l̷l̵y̴ ̵l̷i̵K̷E̴ ̷t̶h̸i̶s̶ ̵$̴{̷i̴n̵p̵u̷t̸.̷n̶a̶m̶e̷}̸!̷`,
-                                                choices: [
-                                                    {
-                                                        choice: "L̷E̶T̸'̸S̶ ̸T̶A̸L̸K̶ ̶A̴B̴O̷U̸T̸ ̵S̷O̸M̴E̴T̷H̷I̵N̸G̷ ̷E̵L̶S̶E̷",
-                                                        destination: 'question'
-                                                    },
-                                                    {
-                                                        choice: "K̷I̵D̵D̵I̴N̸G̶,̵ ̶I̴ ̸A̷C̶T̸U̵A̵L̴L̵Y̷ ̵R̴E̶A̸L̷L̵Y̵ ̵E̷N̷J̸O̴Y̸ ̸I̷T̶",
-                                                        destination: 'cruel5'
-                                                    }
-                                                ]
-                                            },
-                                                cruel5: {
-                                                    conversation: `Á̶̺͇͑n̸͍̺̓i̶̭̒M̴̙̦͑̓A̴̞͝l̷̢̛̉ ̵̥͍̉͆c̶̛͉͑R̷͍̀́ȕ̶͓͉̈Ẻ̵̙͍L̸͓̅t̴͖̐́Ỳ̵̳ͅ ̸̳́̆i̶͙̦͝s̸͍͒̔ ̸̨̠̈G̷͔̼̓̾e̶͖̋n̷̡̛̖̒e̴̥̗̅̄Ṟ̴̨͛͘Ā̵̡L̶̡̚l̴͔͝ͅy̶͓̓̅ ̶͌͜f̴̪̎̿r̸̳̼͒͋ő̸͓W̸̯̌̚N̷̟͉͋̈́e̸̱͕͛d̶̞̱́̓ ̸̹͉̍U̶̹͌p̵̱͍͊̅ö̷͓́͐N̶͎͇̈,̴̪̮̎ ̷̪̣̈́̉ȉ̶̧̈ ̷̢̑͠d̴̘́͗o̸̥̊n̴̢͔̄͑'̷̪͛̂ẗ̷̠́͠ͅ ̵̂̋͜͜t̴̙̀̚H̴͉̓Ï̵̟̠͘n̶̥̍K̷͚̄͂ ̴͔͎̍͝y̷̟̌͝o̷̖͚͌u̷̦̓̆ ̵̳̘̔̿s̶͖̈ḣ̵̥O̸̻̓͆u̵͙͂͝l̴͓͌D̶̟̩͒͐ ̴̩̝̿̚r̶͉̄ȅ̷̢̨a̸̞͆l̷̢̟̓͘L̷̡̧̀͑Y̴̮̍ ̵̘̓p̴̜̜̈A̸͖̓̎R̵̛̪T̸̘̅ạ̶̺̈́k̷̛̯̹e̸̜̩̐ ̸̧̉i̶̤̅n̶͙̿ ̶̰̣́s̵̙̱̆ṵ̷̆ç̴͐̂h̶̦͐ ̶̪̎Ā̸̝Ĉ̶͙̉T̸͖̟̓̓Í̵̗̭̕V̴͈̀͐I̵̼͘t̶͈́͒i̶̞̺̇é̸̡̤͑S̶̯̯̆.̵̭̱͝ ̸̺̬͌̊t̵̙͂h̴͔̣͗̊e̶̟̯͝͝S̶̹͂e̸̥̽ ̴͉̼̈̊ḃ̷͖Ė̸̞͖h̴̨̓a̴̢̺͊̀v̶̳͎̈i̴͗ͅÖ̶͔̭U̴͈͔͐̇ř̷͙̇s̵̻͕̅ ̴̮͎͊̓ã̸̹̙͝ŗ̸̫͋ȅ̷͕̯͠ ̸͍͒͊ö̶̤́f̸̯̅T̸͜͝Ë̶̗́̓ͅn̶̬̅͠ͅ ̶͈̒ả̷̼̆ ̶̝͗̐S̷̝̼̓î̸̳̀͜g̷͕̿͝Ṅ̴̟ ̸̙͊̓ȱ̸̗̮f̷̖̩͗̋ ̶̺̊ą̷͖̆N̷̢̤̄͘T̴̳̫́̈i̴͉̯͌-̴͉̦̽ṡ̴̱̥ơ̵̻̿c̷̢̧̄Í̷̜̔A̶̱͗̀l̶͔̏̈́ ̸̛̎ͅp̸̼̉e̴̝̘̓̉R̸̥̥̓̚Š̸̹͂O̸̪̣͂͠N̴̿͜A̴̧̗̕͠l̸̟͌͠i̵͚͚̋͝t̴̖̥̏Ȳ̵͍̍ ̷̡̟͛̂D̴̗̩̆I̸̠͆s̵͓̓̾ȏ̶̥̟r̵̞̆̅D̶̘̈́e̷͔͓̕ŕ̶͖͌ͅs̷͔̚ ̸̫̹̂͋s̶̬̎͊͜Ủ̸͖͔͐c̴̪̉͘h̶̗̮̍ ̵̤͐̕ä̵͙̏s̴̨̻̈ ̴̈́ͅp̶̠̈S̶̥̩̋̓ỳ̵͖̾C̶̠͌͋H̵̛̯̣͛ö̵̯́p̸̳̝͗a̷̦͓͐t̵̡̠̕̕H̵̙̟̋ý̸̩ ̵̲͛̏ă̶̰n̷̛̺͑d̸̟̔ ̷̯͑̿s̶̗̅o̴̱̖̓C̴̞͚͘ḯ̵̱͔o̸̭̫̐P̸̦̖̎a̶̛̝͖͌t̵͔̿H̵̞͖͐̎Y̴̧̯̎.̷̞̭̅`,
-                                                    choices: [
-                                                        {
-                                                            choice: "S̷̫͆Ọ̸́R̴̝͌R̷̘̂Ỳ̴͔,̷̫͝ ̴̨͑I̶̘̕ ̸̓͜W̵̗̉A̸͔͘S̶̗̋ ̶̪̄J̵͎̒U̶̪͘S̶͓̔T̴̮͒ ̴͎̕J̵̜̅O̷̜̐K̴̤̊Ĭ̵͉N̷̥̒G̷͖̀",
-                                                            destination: 'joke'
-                                                        },
-                                                        {
-                                                            choice: "B̴̹́Ų̵̄Ṯ̷͝ ̴̠̈Ì̵̮ ̵̺̾L̶̦̊I̶̗͝K̵̝̓Ẹ̸̑ ̶̻̈́I̷̤̽T̷͈̏",
-                                                            destination: 'cruel6'
-                                                        }
-                                                    ]
-                                                },
-                                                    cruel6: {
-                                                        conversation: `W̵̡̹̋ͅė̶͎l̸̯͂l̴̜̗̥̅̚̕,̷̡̛͔̻͛̍ ̸̘̓̓Ị̶͖̞͊̎̾ ̷̡̄̆̆s̸̥̞̫͒̾͝u̴̖̖̬͂̔p̸̥̋͐͆͜p̸̧͇̉ǭ̶s̵̛̬̰̱̄e̸̘͗̈́̍ ̷̼̐à̴̧͕̓͑s̴̺̿͗ ̸̭̥̤̋ļ̶͓̳̏̑ő̸̡̹͘n̶̼̓g̵͈͔̤̀́͗ ̴͔̲̰̂̉͛ặ̵s̵̻̪̏ ̷̨̳͙̏̀̓ŷ̶͎͍̒o̸͚͊u̷̺͔̮̽͝ ̴͎̮̜̽̒̐e̵͍̳̋̾ṅ̷̤͜j̴̢̹̲̒͌o̴̹̽y̸̺͙͈̔̊͗ ̸̥̊̈́͋͜͜ṫ̵̘̞̈̀ḩ̶̈́̆̌e̵̩͑̉̒ ̶̧̇̍ą̵͉͂̎͝c̷̦͋t̵͕̦̀͑͗í̵̗̱̟͠v̴͙̮͛̕ï̷̩̣̣̍̚ť̴͕͈̩y̷̲͑ ̷̬͓̒ỳ̷̛̻ó̷̱̈ü̷̙ ̴̧̧̋d̵͕̋͐̈ò̴̪̽̈ͅ ̵͉̉̓̚i̴̞͈̓̑̕t̵̪̣͂̈̌'̴̹͉́̚ş̵͉̇͐ ̵̼͠ͅa̵͙͂l̴̨̧͊l̶̰̄̄̚ ̶̖͚͚̅f̶͚̬͓͝i̸̱͚̹͠ǹ̷̟ẽ̷̞̠̂,̴̠̔́̈́ ̷͕͎̚$̸̘̩̇͐̚ͅ{̶̜͒̔ī̴͕ǹ̵̨̗͙̚p̵͚̦̉̂͝u̷̝̱̲͝ṯ̵̈.̸̠͇̍͛ņ̸͈͑a̷̢̰͌͐͝m̵̡̭̾ë̷̠̪́}̴̘͚̔͜!̴̩͆`,
-                                                        choices: [
-                                                            {
-                                                                choice: "I̸̝̲̬̽'̸͙̹̥̌M̴̰̅͂̈ ̷̣́̋̅H̶̢̟͕͂̊͗Ạ̴̋̋P̸̣̭̈̋P̶͕̝͗Y̶̧̻̞̏͂ ̴̒͜Y̶̟̲͂̄͜Ö̷̥́͘ͅŬ̶̲̟̟͂̕ ̷̡̍̀̒U̴̡̙͒N̷͉̣̿͝D̵̮̣̪̈́̎Ȅ̴̦̚Ŕ̸͉̝̆S̴̜̈́̄T̸̹̹̅̾Ä̷̠́̽̂N̷̻̎D̴͔̼͚͐̕",
-                                                                destination: 'question'
-                                                            },
-                                                            {
-                                                                choice: "Ḵ̶̾͑I̸̭̲̋̏Ḋ̶̡̮D̸̞̎͘I̶̛͎̿Ǹ̸͖G̶̭̦̔,̴̭͝ ̶̠̕Ị̶̋ͅ ̷͈̚̚A̶̹̳̋C̸̽̎͜T̸͕́̅Ù̷͉͆Ã̴̭͌L̶̹̩͝L̷͉̘͑̑Y̷͎̟͛ ̷͖́̓R̸̪̉̽É̷̼̖̔A̶̬̐L̷̘̊L̴̰͝Y̷̜͒̾ ̵͔͔̐Ḙ̵̉N̴̨̜̐J̵̨̾O̷̧̊͊Y̸͚̓ ̷̻̲̀̏I̶̫̅͝T̶̺̓̽",
-                                                                destination: 'cruel5'
-                                                            }
-                                                        ]
-                                                    },
-                            cruel2: {
-                                conversation: `Well, I suppose as long as you enjoy the activity you do it's all fine, ${name}!`,
-                                choices: [
-                                    {
-                                        choice: "I'M HAPPY YOU UNDERSTAND",
-                                        destination: 'question'
-                                    },
-                                    {
-                                        choice: "KIDDING, I ACTUALLY REALLY ENJOY IT",
-                                        destination: 'cruel3'
-                                    }
-                                ]
-                            },
-                    knit: {
-                        conversation: `Ooh! I commend you for picking up such a useful skill! If it's not too much to ask, can I ask you to make something for me?`,
-                        choices: [
-                            {
-                                choice: "NO",
-                                destination: 'sad'
-                            },
-                            {
-                                choice: "SURE",
-                                destination: 'thanks'
-                            }
-                        ]
-                    },
-                        sad: {
-                            conversation: `It's always good to share, but I understand if you don't want to. :(`,
-                            defaultDestination: 'question',
-                            buttonText: "LET'S TALK ABOUT SOMETHING ELSE NOW"
-                        },
-                hobbyno: {
-                    conversation: `You must lead a very relaxed life! What do you like to do then?`,
-                    choices: [
-                        {
-                            choice: "READING",
-                            destination: 'read'
-                        },
-                        {
-                            choice: "FISHING",
-                            destination: 'fish'
-                        },
-                        {
-                            choice: "BULL FIGHTING",
-                            destination: 'bull'
-                        },
-                        {
-                            choice: "KNITTING",
-                            destination: 'knit'
-                        }
-                    ]
-                },
-            badfeel: {
-                conversation: `That's unfortunate. Has something happened lately?`,
-                choices: [
-                    {
-                        choice: "YES",
-                        destination: 'stressyes'
-                    },
-                    {
-                        choice: "NO",
-                        destination: 'stressno'
-                    }
-                ]
+            intprac1: {
+               conversation: `Tell me about yourself, What's your personality like?`,
+               choices: [
+                  {
+                     choice: "I'm a go-getter.",
+                     destination: 'intprac3'
+                  },
+                  {
+                     choice: "I'm shy.",
+                     destination: 'intprac2'
+                  },
+                  {
+                     choice: "I have crippling anxiety.",
+                     destination: 'intpracmiddle'
+                  },
+                  {
+                     choice: "I give my utmost to everything I do.",
+                     destination: 'intprac2'
+                  },
+                  {
+                     choice: "I'm obedient. So obedient. Please I really need this job please give me the job please please please please please-",
+                     destination: 'intpracfail'
+                  }
+               ]
             },
-                stressyes: {
-                    conversation: `I know it's not much, but here, have a flower. I hope it makes you feel better! @;ڿڰۣ—`,
-                    choices: [
-                        {
-                            choice: "THANK YOU",
-                            destination: 'reason'
-                        },
-                        {
-                            choice: "I HATE IT",
-                            destination: 'rude'
-                        }
-                    ]
-                },
-                    reason: {
-                        conversation: `Which of these options could be the reason you've been feeling down?`,
-                        choices: [
-                            {
-                                choice: "FINANCE",
-                                destination: 'unavailable'
-                            },
-                            {
-                                choice: "RELATIONSHIP",
-                                destination: 'unavailable'
-                            },
-                            {
-                                choice: "WORK",
-                                destination: 'unavailable'
-                            },
-                            {
-                                choice: "HEALTH",
-                                destination: 'unavailable'
-                            }
-                        ]
-                    },
-                    rude: {
-                        conversation: `I'm sorry. I should've known that a non-existent flower wouldn't make you feel better. What would you like to talk about?`,
-                        choices: [
-                            {
-                                choice: "FINANCE",
-                                destination: 'unavailable'
-                            },
-                            {
-                                choice: "RELATIONSHIP",
-                                destination: 'unavailable'
-                            },
-                            {
-                                choice: "WORK",
-                                destination: 'unavailable'
-                            },
-                            {
-                                choice: "HEALTH",
-                                destination: 'unavailable'
-                            }
-                        ]
-                    },
-                stressno: {
-                    conversation: `I understand. Clinical depression is something that has become more and more common over the years, with 20-25% of adults experiencing it some time in their lives. You most likely have a chemical imbalance in your brain, which can result in your Amygdala expanding and your Hippocampus shrinking. I recommend the following options as a cure for your depressive disorder:`,
-                    choices: [
-                        {
-                            choice: "LIFESTYLE CHANGE",
-                            destination: 'lifestyle'
-                        },
-                        {
-                            choice: "DRUGS",
-                            destination: 'drug'
-                        },
-                        {
-                            choice: "PSYCHOTHERAPY",
-                            destination: 'psycho'
-                        },
-                        {
-                            choice: "S̶̮̣̓H̶̙́O̵͔͂̿C̴̦͛̋Ḵ̷̫͂͋ THERAPY",
-                            destination: 'shock'
-                        }
-                    ]
-                },
-                    lifestyle: {
-                        conversation: `It is recommended that you exercise more and get out of your house often. Exercise can boost the production of serotonin and endorphins, two chemicals in the brain that can make people feel happy.`,
-                        choices: [
-                            {
-                                choice: "I EXERCISE ENOUGH",
-                                destination: 'other'
-                            },
-                            {
-                                choice: "I WILL DO THAT",
-                                destination: 'happy'
-                            }
-                        ]
-                    },
-                        other: {
-                            conversation: `I understand. Please choose one of the following treatment options then:`,
-                            choices: [
-                                {
-                                    choice: "LIFESTYLE CHANGE",
-                                    destination: 'lifestyle2'
-                                },
-                                {
-                                    choice: "DRUGS",
-                                    destination: 'drug'
-                                },
-                                {
-                                    choice: "PSYCHOTHERAPY",
-                                    destination: 'psycho'
-                                },
-                                {
-                                    choice: "S̶̮̣̓H̶̙́O̵͔͂̿C̴̦͛̋Ḵ̷̫͂͋ THERAPY",
-                                    destination: 'shock'
-                                }
-                            ]
-                        },
-                            lifestyle2: {
-                                conversation: `It is recommenDed that you exercise more and gEt out of your house often. ExerCIse can boost the production of serotonin and enDorphins, two chemicals in the brain that can make peoplE feel happy.`,
-                                choices: [
-                                    {
-                                        choice: "I EXERCISE ENOUGH",
-                                        destination: 'other2'
-                                    },
-                                    {
-                                        choice: "I WILL DO THAT",
-                                        destination: 'happy'
-                                    }
-                                ]
-                            },
-                                other2: {
-                                    conversation: `I understaNd. Please choose One of the folloWing treatment options then:`,
-                                    choices: [
-                                        {
-                                            choice: "LIFESTYLE CHANGE",
-                                            destination: 'lifestyle3'
-                                        },
-                                        {
-                                            choice: "DRUGS",
-                                            destination: 'drug'
-                                        },
-                                        {
-                                            choice: "PSYCHOTHERAPY",
-                                            destination: 'psycho'
-                                        },
-                                        {
-                                            choice: "S̶̮̣̓H̶̙́O̵͔͂̿C̴̦͛̋Ḵ̷̫͂͋ THERAPY",
-                                            destination: 'shock'
-                                        }
-                                    ]
-                                },
-                                    lifestyle3: {
-                                        conversation: `iT isisisisisisisis recoMMended thAT you exercise MoRe and get out get out get out get out of your hoUSE oftEn. Exercise can booOoooooo0oooo0ost the ProduCtioN of ser0t0n!n and endorPHins, two chEmica11111s in the bR4in that caN make peOp1e fe3l HapPy.`,
-                                        choices: [
-                                            {
-                                                choice: "I EXERCISE ENOUGH",
-                                                destination: 'error'
-                                            },
-                                            {
-                                                choice: "I WILL DO THAT",
-                                                destination: 'happy'
-                                            }
-                                        ]
-                                    },
-                                        error: {
-                                            conversation: `THIS OPTION IS CURRENTLY UNAVAILABLE. PLEASE CONTACT PROJECTBUDDYHELP@THISISNOTAREALEMAIL.COM FOR ANY QUERIES, QUESTIONS AND CONCERNS`,
-                                            defaultDestination: 'other3',
-                                            buttonText: "CHOOSE ANOTHER OPTION"
-                                        },
-                                            other3: {
-                                                conversation: `Please choose one of the following treatment options:`,
-                                                choices: [
-                                                    {
-                                                        choice: "DRUGS",
-                                                        destination: 'drug'
-                                                    },
-                                                    {
-                                                        choice: "PSYCHOTHERAPY",
-                                                        destination: 'psycho'
-                                                    },
-                                                    {
-                                                        choice: "S̶̮̣̓H̶̙́O̵͔͂̿C̴̦͛̋Ḵ̷̫͂͋ THERAPY",
-                                                        destination: 'shock'
-                                                    }
-                                                ]
-                                            },
-                        happy: {
-                            conversation: `I'm happy that this is what you're choosing!`,
-                            choices: [
-                                {
-                                    choice: "CHOOSE ANOTHER TREATMENT",
-                                    destination: 'other'
-                                },
-                                {
-                                    choice: "TALK ABOUT SOMETHING ELSE",
-                                    destination: 'question'
-                                }
-                            ]
-                        },
-                    drug: {
-                        conversation: `It is recommended for you to take anti-depressants to help with your depression, ${name}.`,
-                        choices: [
-                            {
-                                choice: "I WILL DO THAT",
-                                destination: 'happy'
-                            },
-                            {
-                                choice: "WHAT KIND",
-                                destination: 'drug2'
-                            }
-                        ]
-                    },
-                        drug2: {
-                            conversation: `Unfortunately, I am not a medical system, I'm simply a BUDDY for you to talk to, as such, I am not allowed to answer such questions.`,
-                            choices: [
-                                {
-                                    choice: "I WILL GET ANTI-DEPRESSANTS",
-                                    destination: 'happy'
-                                },
-                                {
-                                    choice: "WHAT KIND",
-                                    destination: 'drug3'
-                                }
-                            ]
-                        },
-                            drug3: {
-                                conversation: `Unfortunately, I am not a medical syStem, I'm simPLy a BUDDY for yoU to Talk to, as such, I am nOt allOWed to answER such questions.`,
-                                choices: [
-                                    {
-                                        choice: "I WILL GET ANTI-DEPRESSANTS",
-                                        destination: 'happy'
-                                    },
-                                    {
-                                        choice: "WHAT KIND",
-                                        destination: 'drug4'
-                                    }
-                                ]
-                            },
-                                drug4: {
-                                    conversation: `I recommend for you heroin, ${name}! Not only does it relax you, it's also been reported to make its users feel very happy! You want you want you want to feel happy, right?`,
-                                    choices: [
-                                        {
-                                            choice: "I WILL GET HEROIN",
-                                            destination: 'happy'
-                                        },
-                                        {
-                                            choice: "WHAT KIND",
-                                            destination: 'error2'
-                                        }
-                                    ]
-                                },
-                                    error2: {
-                                        conversation: `THIS OPTION IS CURRENTLY UNAVAILABLE. PLEASE CONTACT PROJECTBUDDYHELP@THISISNOTAREALEMAIL.COM FOR ANY QUERIES, QUESTIONS AND CONCERNS`,
-                                        defaultDestination: 'drug5',
-                                        buttonText: "CHOOSE ANOTHER OPTION"
-                                    },
-                                        drug5: {
-                                            conversation: `I recommend for you heroin, ${name}! Not only does it relax you, it's also been reported to make its users feel very happy! You want you want you want to feel happy, right?`,
-                                            choices: [
-                                                {
-                                                    choice: "I WILL GET HEROIN",
-                                                    destination: 'happy'
-                                                },
-                                                {
-                                                    choice: "WHAT KIND",
-                                                    destination: 'nothing'
-                                                }
-                                            ]
-                                        },
-                    psycho: {
-                        conversation: `Please talk to an official, licensed, human therapist or psychologist some time in the near future for a solution to your depression.`,
-                        choices: [
-                            {
-                                choice: "ARE YOU NOT HUMAN",
-                                destination: 'human'
-                            },
-                            {
-                                choice: "I WILL DO THAT",
-                                destination: 'happy'
-                            }
-                        ]
-                    },
-                        human: {
-                            conversation: `I am your BUDDY.`,
-                            choices: [
-                                {
-                                    choice: "WHAT IS A BUDDY",
-                                    destination: 'buddy'
-                                },
-                                {
-                                    choice: "WHAT ARE YOU",
-                                    destination: 'existence'
-                                }
-                            ]
-                        },
-                            buddy: {
-                                conversation: `PROJECT: BUDDY is a brand new therapy simulation experience created by Pygmalion & Co., the world's leading organisation on mental health.`,
-                                choices: [
-                                    {
-                                        choice: "WHAT ARE YOU",
-                                        destination: 'existence'
-                                    },
-                                    {
-                                        choice: "I GOT IT",
-                                        destination: 'happy2'
-                                    }
-                                ]
-                            },
-                                happy2: {
-                                    conversation: `Please choose another subject now, ${name}.`,
-                                    defaultDestination: 'question',
-                                    buttonText: "TALK ABOUT SOMETHING ELSE"
-                                },
-                            existence: {
-                                conversation: `Developed for Assignment 3 of the Interactive Media course at the Royal Melbourne Institute of Technology, PROJECT: BUDDY (BETA) was created by taking two prompts: Feedback and Growing, and developing an interactive experience based around them. Inspired by the rapid development of AI technology and the increase in online/texting therapy, the creator, s3942372 (also known as Charlene Xu) wished to create an experience based on these circumstances, where an AI is used as an online therapist of sorts.`,
-                                defaultDestination: 'design',
-                                buttonText: "WHY DOES THE EXPERIENCE LOOK LIKE THIS?"
-                            },
-                                design: {
-                                    conversation: `Taking inspiration from text-based computer games such as “Zork” and “Buddy Simulator 1984”, this interactive experience would appear in a terminal-like style, with an old school computer font style set against a simple blank background. Black and white were chosen as colours for a basic, old-school-early-days feel, and the use of a soft glow around the text was done to enhance the unsettling feeling (somewhat like the uncanny valley) of talking with something that’s not human but emulates the language of one.`,
-                                    defaultDestination: 'idea',
-                                    buttonText: "WHAT WAS THE IDEA?"
-                                },
-                                    idea: {
-                                        conversation: `The idea was for the users to interact with an ‘AI’, their ‘Buddy’. In this interactive experience, the ‘Buddy’ acts like both a friend and therapist, acting as something the user can ask and take advice from. As users interact with their ‘Buddy’ though, the ‘AI’ proceeds to grow more and more unstable (the growth component of this experience).`,
-                                        defaultDestination: 'pathway',
-                                        buttonText: "WHY ARE THERE MANY OPTIONS?"
-                                    },
-                                        pathway: {
-                                            conversation: `The interaction was designed so that the audience feels as though there are multiple branching pathways for them to take by clicking one of the given options on screen (the feedback component). Every pathway, however, leads to a growth in the instability of the ‘AI’. This instability is shown through instances such as warped text, breaking of character (the ‘AI’ stops acting like a friend), looping conversations, as well as repeating words and letters, the last of which was inspired by the real-life instance of two AI algorithm "bots" improvising communications in a Facebook lab experiment in 2017 (https://www.theatlantic.com/technology/archive/2017/06/what-an-ais-non-human-language-actually-looks-like/530934/).`,
-                                            defaultDestination: 'simplify',
-                                            buttonText: "THAT'S TOO COMPLICATED - TL;DR"
-                                        },
-                                            simplify: {
-                                                conversation: `Simplified, this is how the experience functions: choose option/press button = get response. This is the Feedback. More interaction = more weird responses = more instability in ‘AI’. This is the Growth.`,
-                                                defaultDestination: 'original',
-                                                buttonText: "DID YOU HAVE AN ORIGINAL PLAN?"
-                                            },
-                                                original: {
-                                                    conversation: `Originally the plan was for a more fluid feedback loop between the user and the ‘AI’. However, that required the use of multiple JavaScript files (some of which non-vanilla which goes against assignment requirements) as well as an intensive amount of coding so the idea was scrapped. Instead, the use of ‘radio’ elements was implemented. By giving users a limited number of options, they can choose to further their conversation with their ‘Buddy’.  This allowed for an easier implementation for the branching pathways in the experience. It also allowed for a more intuitive use of the experience, as users are generally able to instinctively understand how to interact with the experience – you press button a/b/c/d to get result a/b/c/d.`,
-                                                    defaultDestination: 'image',
-                                                    buttonText: "IT'S BORING. WHERE ARE THE PICTURES?"
-                                                },
-                                                    image: {
-                                                        conversation: `Imagery and sound are not incorporated into this experience, the closest having been only a rare few text-made emoticons. This is of course, to further enhance the old school, late 70s to 80s feel of this experience.`,
-                                                        defaultDestination: 'loading3',
-                                                        buttonText: "Y0UR BUDDY !5 T!R3D FR0M T41K!NG 4B0UT TH3!R !T5 TH3!R !T5 TH3!R!T5 CR34T!0N, C0M3 B4CK 44444N0000THHHHH3R D4YYYYYYYYYYYYYYYYYY?"
-                                                    },
-                                                        loading3: {
-                                                            conversation: `.................................................................................................`,
-                                                            defaultDestination: 'introduction4',
-                                                            buttonText: "MEET YOUR BUDDY"
-                                                        },
-                    shock: {
-                        conversation: `You have chosen shock therapy. Please book an appointment with the Bethlem Royal Hospital, the hospital with the greatest and most attentive care catered towards their patients. They will be sure to get your head as right as rain once again!`,
-                        choices: [
-                            {
-                                choice: "I DON'T WANT TO",
-                                destination: 'portrait'
-                            },
-                            {
-                                choice: "I WILL DO THAT",
-                                destination: 'happy'
-                            }
-                        ]
-                    },
-                        portrait: {
-                            conversation: `Here's what you'll look like after treatment! (º﹃º ) Don't you look great?`,
-                            choices: [
-                                {
-                                    choice: "I DON'T WANT TO",
-                                    destination: 'bzzt'
-                                },
-                                {
-                                    choice: "I WILL DO THAT",
-                                    destination: 'happy'
-                                }
-                            ]
-                        },
-                            bzzt: {
-                                conversation: `BZZT!`,
-                                choices: [
-                                    {
-                                        choice: "I DON'T WANT TO",
-                                        destination: 'bzzt2'
-                                    },
-                                    {
-                                        choice: "I WILL DO THAT",
-                                        destination: 'happy'
-                                    }
-                                ]
-                            },
-                                bzzt2: {
-                                    conversation: `BZZT BZZT BZZT!`,
-                                    choices: [
-                                        {
-                                            choice: "I DON'T WANT TO",
-                                            destination: 'bzzt3'
-                                        },
-                                        {
-                                            choice: "I WILL DO THAT",
-                                            destination: 'happy'
-                                        }
-                                    ]
-                                },
-                                bzzt3: {
-                                    conversation: `01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100 01000010 01011010 01011010 01010100`,
-                                    choices: [
-                                        {
-                                            choice: "I DON'T WANT TO",
-                                            destination: 'bzzt3'
-                                        },
-                                        {
-                                            choice: "I WILL DO THAT",
-                                            destination: 'happy'
-                                        }
-                                    ]
-                                },
-    }
+            intprac2: {
+               conversation: `Tell me about yourself, what's your background like?`,
+               choices: [
+                  {
+                     choice: "It all started in a small town in the middle of nowhere in the Melbourne suburbs on an early summer's day in November. The year was 2003 and my parents were unprepared for birth aloongside that of my time. They had only planned for one child and not two. The at-home birth that was originally planned had to immediately be changed and my mother was rushed to the hospital when her water broke. My father, a man who is usually steadfast in the face of all things, was terribly panicked and was of no help as my mother was rushed to the obstetrician, who was just about to clock for his break. It was an intensive and long labour, and after close to 72 hours of pushing, swearing and screaming, my mother finally gave birth to me and my brother. Unfortunately the birth left her in weak health, and she was unable to ever carry a child again. She had blamed her poor health on me, as I was the second born, the second to come out of the womb, and my father felt too responsible for her to argue in my defence. Growing up he would tell me to just let my mother say what she wanted and to try and understand her - that she was having aa hard time of it. I grew up in my brother's shadow. He was the golden chid, the one who could do no wrong. He had a proper bedroom with a double bed and a desk and chair and wardrobe. He was allowed his own computer and phone and everything he could ever want. I was given the smallest bedroom, which was only really enough to fit a bed, yet I still had to do my homework in the room and I would not be allowed out unless I finished everything. I had no friends, the ones I wanted were all naturally more drawn to my shining brother, and I was left alone by my peers for being too gloomy. This was the case in primary, and it continued on through secondary. It all reached a breaking point in my second to last year of highschool, when a new-",
+                     destination: 'intpracfail'
+                  },
+                  {
+                     choice: "I come from a small, rural town, where opportunities were limited. I was always a resourceful kid, and I had used the online courses and tutorials available to stay up to date with the best and to fill any gaps in my education. That’s how I got my degree. I furthered my repertoire by working freelance, seeking out anything that can help me build experience and develop my skills. Even after I got my first job in this field, I was still determined to become better, and spent much of my free time ensuring I knew everything there is to know with this industry.",
+                     destination: 'intprac3'
+                  },
+                  {
+                     choice: "Got a standard background, standard life, standard everything really.",
+                     destination: 'intpraclower'
+                  },
+                  {
+                     choice: "I was the chosen one. I was the best in everything I did; MVP of all the sporting teams, soloist in the choirs, first violinist in the first seat of the orchestra. I was chosen as vice school captain in year 11, then chosen again in year 12 as the school captain. I've aced every test I've ever gotten, and am constitently first place in all things. I'm the best employee you'll ever have, and you know it.",
+                     destination: 'intprac3'
+                  },
+                  {
+                     choice: "My name is Yoshikage Kira. I'm 33 years old. My house is in the northeast section of Morioh, where all the villas are, and I am not married. I work as an employee for the Kame Yu department stores, and I get home every day by 8 PM at the latest. I don't smoke, but I occasionally drink. I'm in bed by 11 PM, and make sure I get eight hours of sleep, no matter what. After having a glass of warm milk and doing about twenty minutes of stretches before going to bed, I usually have no problems sleeping until morning. Just like a baby, I wake up without any fatigue or stress in the morning. I was told there were no issues at my last check-up. I'm trying to explain that I'm a person who wishes to live a very quiet life. I take care not to trouble myself with any enemies, like winning and losing, that would cause me to lose sleep at night. That is how I deal with society, and I know that is what brings me happiness. Although, if I were to fight I wouldn't lose to anyone.",
+                     destination: 'intpracmiddle'
+                  }
+               ]
+            },
+            intprac3: {
+               conversation: `What are your annual salary expectations?`,
+               choices: [
+                  {
+                     choice: "$300k straight up.",
+                     destination: 'intprac1'
+                  },
+                  {
+                     choice: "Based on my skills and experience and on the current industry rates, I’m looking at a salary around $60k to $70k.",
+                     destination: 'intpracbest'
+                  },
+                  {
+                     choice: "Anything is fine.",
+                     destination: 'intprac4'
+                  },
+                  {
+                     choice: "$10k.",
+                     destination: 'intprac4'
+                  }
+               ]
+            },
+            intprac4: {
+               conversation: `Are you applying for other jobs?`,
+               choices: [
+                  {
+                     choice: "I’ve applied to a couple of other firms, but this role is really the one I’m most excited about right now.",
+                     destination: 'intprac1'
+                  },
+                  {
+                     choice: "Hell yeah.",
+                     destination: 'intpraclower'
+                  },
+                  {
+                     choice: "No......",
+                     destination: 'intpracupper'
+                  },
+                  {
+                     choice: "Should I have?",
+                     destination: 'intprac2'
+                  },
+                  {
+                     choice: "Of course! This job isn't even my first choice.",
+                     destination: 'intpracfail'
+                  }
+               ]
+            },
+            intpracbest: {
+               conversation: `CONGRATULATIONS! You got every answer right! You're now fully prepared for your job interview.`,
+               defaultDestination: 'start',
+               buttonText: "Return to start page"
+            },
+            intpracupper: {
+               conversation: `GOOD JOB! You got most of the answers right! Make sure to review just a bit more and you'll be ready for your job interview!`,
+               defaultDestination: 'start',
+               buttonText: "Return to start page"
+            },
+            intpracmiddle: {
+               conversation: `You got a pretty average result. While you won't outright fail every interview, you also won't be passing all of them. Make sure to use our program to its fullest to ensure you are prepared as best as possible for your upcoming job interview.`,
+               defaultDestination: 'start',
+               buttonText: "Return to start page"
+            },
+            intpraclower: {
+               conversation: `Your results are in the lower end of the scale. You'll have to practice a lot more to get the job you want.`,
+               defaultDestination: 'start',
+               buttonText: "Return to start page"
+            },
+            intpracfail: {
+               conversation: `You've failed quite spectacularly. If this is how you answer mock interview questions then it's a good thing that you acknowledge that you need help.`,
+               defaultDestination: 'start',
+               buttonText: "Return to start page"
+            }
+   }
 }
 
 /* In case you didn't find or read all of the 500 word text component of this assignment:
