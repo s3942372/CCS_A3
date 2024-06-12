@@ -54,17 +54,6 @@ function nextQuestion() {
     }
 }
 
-let currentImageIndex = 0;
-
-    function displayNextImage() {
-        if (currentImageIndex < images.length) {
-            document.getElementById("questionImage").src = images[currentImageIndex];
-            currentImageIndex++;
-        } else {
-            alert("All images displayed.");
-        }
-    }
-
 function speak(text) {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
