@@ -19,7 +19,7 @@ const responses = [
 ];
 
 const images = [
-    src = "/public/images/intro.png",
+    "/public/images/intro.png",
     "/public/images/hello.jpg",
     "image3.jpg",
     "image4.jpg",
@@ -46,7 +46,7 @@ function nextQuestion() {
         }
         document.getElementById("question").innerText = question;
         document.getElementById("answer").value = "";
-        document.getElementById("helloImage").src = images[currentQuestionIndex];
+        document.getElementById("questionImage").src = images[currentQuestionIndex];
         currentQuestionIndex++;
         speak(response);
     } else {
