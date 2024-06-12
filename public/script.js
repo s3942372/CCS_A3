@@ -19,8 +19,8 @@ const responses = [
 ];
 
 const images = [
-    "/public/images/intro.png",
-    "/public/images/hello.jpg",
+    "intro.png",
+    "hello.jpg",
     "image3.jpg",
     "image4.jpg",
     "image5.jpg",
