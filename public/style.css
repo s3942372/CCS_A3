@@ -15,20 +15,21 @@ body {
 }
 .question {
     font-weight: bold;
+    margin-bottom: 20px;
 }
 .answer {
     margin-bottom: 20px;
 }
 button {
     padding: 10px 20px;
-    background-color: #8ab9ee;
+    background-color: #1c242c;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #8ab9ee;
+    background-color: #144c8c;
 }
 #imageContainer {
     margin-top: 20px;

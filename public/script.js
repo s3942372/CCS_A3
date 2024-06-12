@@ -9,6 +9,7 @@ const questions = [
 ];
 
 const responses = [
+    "Hello, I am Fred. I will be helping you practice for your interview today.",
     "That's great! Let's move on to the next question.",
     "Impressive! Keep it up.",
     "Everyone has weaknesses. It's good that you're aware of yours.",
@@ -59,3 +60,26 @@ function speak(text) {
     const utterance = new SpeechSynthesisUtterance(text);
     synth.speak(utterance);
 }
+
+var speech = true; 
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
+  
+        const recognition = new SpeechRecognition(); 
+        recognition.interimResults = true; 
+        const answer = document.querySelector('.answer'); 
+        answer.appendChild(p); 
+  
+        recognition.addEventListener('result', e => { 
+            const transcript = Array.from(e.results) 
+                .map(result => result[0]) 
+                .map(result => result.transcript) 
+                .join('') 
+  
+            document.getElementById("answer").innerHTML = transcript; 
+            console.log(transcript); 
+        }); 
+          
+        if (speech == true) { 
+            recognition.start(); 
+            recognition.addEventListener('end', recognition.start); 
+        } 
