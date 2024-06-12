@@ -1,0 +1,73 @@
+@font-face{
+    font-family: 'Apple II';
+    src: url('fonts/font.ttf');
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+button {
+    color: #1c242c;
+    font-size: 4vh;
+    font-family: 'Apple II';
+    line-height: 4vh;
+    background-image: radial-gradient(#d3cebe, #d3cebe 120%);
+    display: block;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+
+input {
+    color: #1c242c;
+    font-size: 4vh;
+    font-family: "Apple II";
+    line-height: 4vh;
+    background-image: radial-gradient(#d3cebe, #d3cebe 120%);
+    display: block;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
+body {
+    color: #1c242c;
+    text-shadow: 0 0 4px #d3cebe;
+    font-size: 4vh;
+    font-family: 'Apple II';
+    line-height: 4vh;
+    background-color:#8ab9ee;
+    margin-top: 5vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-bottom: 5vh;
+}
+  
+body::after {
+    content: '';
+    position: fixed;
+    font-size: 4vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+div{
+    background-color: #dbdbdb;
+    font-size: 4vh;
+    margin-top: 2.5vh;
+}
+
+img{
+    align-items: right;
+}
