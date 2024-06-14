@@ -8,9 +8,12 @@ const questions = [
     "Why do you want to work for our company?",
     "What interests you about the position?",
     "How is your previous experience relevant?",
-    "Where do you see yourself in five years?",
     "Why did you leave your previous job?",
+    "Where do you see yourself in five years?",
     "Why should we hire you?",
+    "Can you give an example of a time you demonstrated leadership?",
+    "What is your preferred work style or management style?",
+    "How do you handle stress?",
     "Do you have any questions for us?",
     "Thank you for coming.",
     "Goodbye.",
@@ -31,6 +34,9 @@ const responses = [
     "Mmhmm, we'll take that into consideration.",
     "Ambitious goals! We appreciate your vision.",
     "You make a compelling case. Let's see what else you have to offer.",
+    "Oh my. That's certainly something.",
+    "Hmm, we'll see how you fit in.",
+    "Alright, the questions are almost over now.",
     "I'm afraid I can't say.",
     "If we decide to hire you, you will recieve a response within a month time.",
     "Have a good day.",
@@ -90,6 +96,24 @@ function nextQuestion() {
             response = "That's dissapointing. You should have done your work. Now I think that you're not interested, and that you won't give 100% in your work here.";
         } else if (answer.includes("research")) {
             response = "That's excellent! We always appreciate the ones who make sure to prepare for their interview.";
+        } else if (answer.includes("collaboration")) {
+            response = "That's excellent! We love a team player!";
+        } else if (answer.includes("collaborate")) {
+            response = "That's excellent! We love a team player!";
+        } else if (answer.includes("collaborating")) {
+            response = "That's excellent! We love a team player!";
+        } else if (answer.includes("extrovert")) {
+            response = "That's excellent! We love a team player!";
+        } else if (answer.includes("solo")) {
+            response = "Hmm, I'm afraid you may have to work with others as part of our team.";
+        } else if (answer.includes("alone")) {
+            response = "I see, that's unfortunate.";
+        } else if (answer.includes("introvert")) {
+            response = "That's alright, so long as you can work well with others when you need to.";
+        } else if (answer.includes("bad")) {
+            response = "That might pose a problem.";
+        } else if (answer.includes("good")) {
+            response = "That's great. We've been told that a workplace such as ours can be stressful for those unfamiliar or... unfitting...";
         } else {
             response = responses[currentQuestionIndex];
         }
