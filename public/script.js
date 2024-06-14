@@ -41,12 +41,21 @@ const responses = [
     "Hmm, we'll see how you fit in. This one's an important one now: how do you handle stress?",
     "Alright, leading on from that, how would you handle conflict in the workplace?",
     "Let me note that down. Now before we end the interview, do you have any questions for us?",
-    "I'm afraid I can't say. Thank you for coming.",
+    "I'm afraid I can't answer that. Thank you for coming.",
     "If we decide to hire you, you will recieve a response within a month time. Goodbye.",
     "Have a good day.",
 ];
 
 const images = [
+    "hello.jpg",
+    "hello.jpg",
+    "hello.jpg",
+    "hello.jpg",
+    "hello.jpg",
+    "hello.jpg",
+    "hello.jpg",
+    "hello.jpg",
+    "hello.jpg",
     "hello.jpg",
     "hello.jpg",
     "hello.jpg",
