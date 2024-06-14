@@ -64,7 +64,7 @@ function nextQuestion() {
         const question = questions[currentQuestionIndex];
         const answer = document.getElementById("answer").value.toLowerCase().trim();
         let response;
-        if (answer.includes("strength")) {
+        if (answer.includes("strength") || answer.includes("weaknesses")) {
             response = "Your strength is noted.";
         } else if (answer.includes("weakness")) {
             response = "Acknowledged. It's good to be self-aware.";
