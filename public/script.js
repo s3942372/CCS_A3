@@ -80,7 +80,7 @@ function nextQuestion() {
             response = "That's fantastic, it's great to have people who know what they're doing!";
         } else if (answer.includes("salary")) {
             response = "You'll be getting the standard entry level salary, and if you do well we can discuss a raise.";
-        } else if (answer.includes("know nothing")) {
+        } else if (answer.includes("nothing") || answer.includes("know")) {
             response = "That's dissapointing. You should have done your research. Now I think that you're not interested, and that you won't give 100% in your work here.";
         } else {
             response = responses[currentQuestionIndex];
