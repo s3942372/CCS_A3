@@ -6,7 +6,10 @@ const questions = [
     "What are your strengths?",
     "What are your weaknesses?",
     "Why do you want to work for our company?",
+    "What interests you about the position?",
+    "How is your previous experience relevant?",
     "Where do you see yourself in five years?",
+    "Why did you leave your previous job?",
     "Why should we hire you?",
     "Do you have any questions for us?",
     "Thank you for coming.",
@@ -23,6 +26,9 @@ const responses = [
     "Impressive! Keep it up.",
     "Everyone has weaknesses. It's good that you're aware of yours.",
     "Interesting. Our company values align well with your goals.",
+    "I see, I see.",
+    "Alright, that's certainly something.",
+    "Mmhmm, we'll take that into consideration.",
     "Ambitious goals! We appreciate your vision.",
     "You make a compelling case. Let's see what else you have to offer.",
     "I'm afraid I can't say.",
@@ -80,8 +86,10 @@ function nextQuestion() {
             response = "That's fantastic, it's great to have people who know what they're doing!";
         } else if (answer.includes("salary")) {
             response = "You'll be getting the standard entry level salary, and if you do well we can discuss a raise.";
-        } else if (answer.includes("know something") || answer.includes("aye")) {
-            response = "That's dissapointing. You should have done your research. Now I think that you're not interested, and that you won't give 100% in your work here.";
+        } else if (answer.includes("nothing")) {
+            response = "That's dissapointing. You should have done your work. Now I think that you're not interested, and that you won't give 100% in your work here.";
+        } else if (answer.includes("research")) {
+            response = "That's excellent! We always appreciate the ones who make sure to prepare for their interview.";
         } else {
             response = responses[currentQuestionIndex];
         }
