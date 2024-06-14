@@ -41,7 +41,7 @@ const responses = [
     "Hmm, we'll see how you fit in. This one's an important one now: how do you handle stress?",
     "Alright, leading on from that, how would you handle conflict in the workplace?",
     "Let me note that down. Now before we end the interview, do you have any questions for us?",
-    "I'm afraid I can't answer that. Oh and just in case you were wondering, the faces are all of our previous hires who have established positions within our company. Apparently they all used something called 'Interview Simulator'. I heard it's really good, 10 out of 10 would recommend. 5 out of 5 stars, Gets you the job you want. You should try it out too if you haven't already. Just so you know.",
+    "I'm afraid I can't answer that. Oh and just in case you were wondering, the people in the background are all of our previous hires who have established positions within our company. Apparently they all used something called 'Interview Simulator'. I heard it's really good, 10 out of 10 would recommend, 5 out of 5 stars, Gets you the job you want. You should try it out too if you haven't already. Just so you know.",
     "Thank you for coming. If we decide to hire you, you will recieve a response within a month time. Goodbye.",
     "Have a good day.",
 ];
