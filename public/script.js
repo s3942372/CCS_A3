@@ -41,8 +41,8 @@ const responses = [
     "Hmm, we'll see how you fit in. This one's an important one now: how do you handle stress?",
     "Alright, leading on from that, how would you handle conflict in the workplace?",
     "Let me note that down. Now before we end the interview, do you have any questions for us?",
-    "I'm afraid I can't answer that. Thank you for coming.",
-    "If we decide to hire you, you will recieve a response within a month time. Goodbye.",
+    "I'm afraid I can't answer that. Oh and just in case you were wondering, the faces are some of the previous users of our services who with our guidance were all hired by their desired companies. Just so you know.",
+    "Thank you for coming. If we decide to hire you, you will recieve a response within a month time. Goodbye.",
     "Have a good day.",
 ];
 
