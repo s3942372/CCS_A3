@@ -81,67 +81,67 @@ function nextQuestion() {
         const question = questions[currentQuestionIndex];
         const answer = document.getElementById("answer").value.toLowerCase().trim();
         let response;
-        if (answer.includes("strength") /*|| question.includes("strengths") <= I tried to make it so that the question asked had to include the word 'strengths' while the answer included the word 'strength' for this answer to be triggered. It did not work and I did not have time to try something else.*/ ) {
-            response = "Your strength is noted.";
-        } else if (answer.includes("weakness")) {
-            response = "Acknowledged. It's good to be self-aware.";
-        } else if (answer.includes("interested") || answer.includes("passion")) {
-            response = "That's fantastic to hear!";
-        } else if (answer.includes("Chinese") || answer.includes("family")) {
-            response = "That's fantastic, we have to fill the quotas.";
-        } else if (answer.includes("Indigenous") || answer.includes("family")) {
-            response = "That's fantastic, we have to fill the quotas.";
-        } else if (answer.includes("African") || answer.includes("family")) {
-            response = "That's fantastic, we have to fill the quotas.";
-        } else if (answer.includes("gay")) {
-            response = "That's fantastic, we have to fill the quotas.";
-        } else if (answer.includes("homosexual")) {
-            response = "That's fantastic, we have to fill the quotas.";
-        } else if (answer.includes("trans")) {
-            response = "That's fantastic, we have to fill the quotas.";
-        } else if (answer.includes("inexperienced")) {
-            response = "That's unfortunate, we like people with experience in this field of work.";
-        } else if (answer.includes("little") || answer.includes("experience")) {
-            response = "Some more experience would have been ideal, but at least you have some.";
-        } else if (answer.includes("some") || answer.includes("experience")) {
-            response = "That's fine, you can always gain more with us.";
-        } else if (answer.includes("lot") || answer.includes("experience")) {
-            response = "That's fantastic, it's great to have people who know what they're doing!";
-        } else if (answer.includes("salary")) {
-            response = "You'll be getting the standard entry level salary, and if you do well we can discuss a raise.";
-        } else if (answer.includes("nothing")) {
-            response = "That's dissapointing. You should have done your work. Now I think that you're not interested, and that you won't give 100% in your work here.";
-        } else if (answer.includes("research")) {
-            response = "That's excellent! We always appreciate the ones who make sure to prepare for their interview.";
-        } else if (answer.includes("collaboration")) {
-            response = "That's excellent! We love a team player!";
-        } else if (answer.includes("collaborate")) {
-            response = "That's excellent! We love a team player!";
-        } else if (answer.includes("collaborating")) {
-            response = "That's excellent! We love a team player!";
-        } else if (answer.includes("extrovert")) {
-            response = "That's excellent! We love a team player!";
-        } else if (answer.includes("solo")) {
-            response = "Hmm, I'm afraid you may have to work with others as part of our team.";
-        } else if (answer.includes("alone")) {
-            response = "I see, that's unfortunate.";
-        } else if (answer.includes("introvert")) {
-            response = "That's alright, so long as you can work well with others when you need to.";
-        } else if (answer.includes("bad")) {
-            response = "That might pose a problem.";
-        } else if (answer.includes("good")) {
-            response = "That's great. We've been told that a workplace such as ours can be stressful for those unfamiliar or... unfitting...";
+            if (answer.includes("strength") /*|| question.includes("strengths") <= I tried to make it so that the question asked had to include the word 'strengths' while the answer included the word 'strength' for this answer to be triggered. It did not work and I did not have time to try something else.*/ ) {
+                response = "Your strength is noted.";
+            } else if (answer.includes("weakness")) {
+                response = "Acknowledged. It's good to be self-aware.";
+            } else if (answer.includes("interested") || answer.includes("passion")) {
+                response = "That's fantastic to hear!";
+            } else if (answer.includes("Chinese") || answer.includes("family")) {
+                response = "That's fantastic, we have to fill the quotas.";
+            } else if (answer.includes("Indigenous") || answer.includes("family")) {
+                response = "That's fantastic, we have to fill the quotas.";
+            } else if (answer.includes("African") || answer.includes("family")) {
+                response = "That's fantastic, we have to fill the quotas.";
+            } else if (answer.includes("gay")) {
+                response = "That's fantastic, we have to fill the quotas.";
+            } else if (answer.includes("homosexual")) {
+                response = "That's fantastic, we have to fill the quotas.";
+            } else if (answer.includes("trans")) {
+                response = "That's fantastic, we have to fill the quotas.";
+            } else if (answer.includes("inexperienced")) {
+                response = "That's unfortunate, we like people with experience in this field of work.";
+            } else if (answer.includes("little") || answer.includes("experience")) {
+                response = "Some more experience would have been ideal, but at least you have some.";
+            } else if (answer.includes("some") || answer.includes("experience")) {
+                response = "That's fine, you can always gain more with us.";
+            } else if (answer.includes("lot") || answer.includes("experience")) {
+                response = "That's fantastic, it's great to have people who know what they're doing!";
+            } else if (answer.includes("salary")) {
+                response = "You'll be getting the standard entry level salary, and if you do well we can discuss a raise.";
+            } else if (answer.includes("nothing")) {
+                response = "That's dissapointing. You should have done your work. Now I think that you're not interested, and that you won't give 100% in your work here.";
+            } else if (answer.includes("research")) {
+                response = "That's excellent! We always appreciate the ones who make sure to prepare for their interview.";
+            } else if (answer.includes("collaboration")) {
+                response = "That's excellent! We love a team player!";
+            } else if (answer.includes("collaborate")) {
+                response = "That's excellent! We love a team player!";
+            } else if (answer.includes("collaborating")) {
+                response = "That's excellent! We love a team player!";
+            } else if (answer.includes("extrovert")) {
+                response = "That's excellent! We love a team player!";
+            } else if (answer.includes("solo")) {
+                response = "Hmm, I'm afraid you may have to work with others as part of our team.";
+            } else if (answer.includes("alone")) {
+                response = "I see, that's unfortunate.";
+            } else if (answer.includes("introvert")) {
+                response = "That's alright, so long as you can work well with others when you need to.";
+            } else if (answer.includes("bad")) {
+                response = "That might pose a problem.";
+            } else if (answer.includes("good")) {
+                response = "That's great. We've been told that a workplace such as ours can be stressful for those unfamiliar or... unfitting...";
+            } else {
+                response = responses[currentQuestionIndex];
+            }
+            document.getElementById("question").innerText = question;
+            document.getElementById("answer").value = "";
+            document.getElementById("questionImage").src = images[currentQuestionIndex];
+            currentQuestionIndex++;
+            speak(response);
         } else {
-            response = responses[currentQuestionIndex];
+            alert("Interview is over. Thank you!");
         }
-        document.getElementById("question").innerText = question;
-        document.getElementById("answer").value = "";
-        document.getElementById("questionImage").src = images[currentQuestionIndex];
-        currentQuestionIndex++;
-        speak(response);
-    } else {
-        alert("Interview is over. Thank you!");
-    }
 }
 // Again like I said for the standard responses and the questions, I would have liked to make some responses a lot more self-aware. I still had to settle with generic replies with these as I can't predict everything that people would type in and create a response for it.
 // If the user types in a trigger word in reply to a different question these responses would still get triggered too which is annoying and I didn't figure out how to fix it, but hey, it fits the aesthetic of a cheap online simulator.
