@@ -64,13 +64,13 @@ function nextQuestion() {
         const question = questions[currentQuestionIndex];
         const answer = document.getElementById("answer").value.toLowerCase().trim();
         let response;
-        if (answer.includes("strength") || answer.includes("weaknesses")) {
+        if (answer.includes("strength") || question.includes("weaknesses")) {
             response = "Your strength is noted.";
         } else if (answer.includes("weakness")) {
             response = "Acknowledged. It's good to be self-aware.";
         } else if (answer.includes("interested") || answer.includes("passion")) {
             response = "That's fantastic to hear!";
-        } else if (answer.includes("Chinese") || question.includes("family")) {
+        } else if (answer.includes("Chinese") || answer.includes("family")) {
             response = "That's fantastic, we have to fill the quotas.";
         } else if (answer.includes("Indigenous") || answer.includes("family")) {
             response = "That's fantastic, we have to fill the quotas.";
