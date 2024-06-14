@@ -3,6 +3,7 @@
 <html lang="en">
     
     <!-- <img id="Interviewers" src="letushireyou.jpg" alt="Smiling Interviewers"> -->
+    <!-- Tried to insert the background image in the html file and failed. I did it in css instead. -->
     
     <head>
         
@@ -13,6 +14,8 @@
         <title>Interview Simulator</title>
     
     </head>
+
+    <!-- So the idea is kind of for the simulator to have a responsive 'AI' for you to practice your interview with. And based on your answers the 'AI' responds differently. Of course, it's also meant to simulate the cheap looking simulators and quizzes you can find online with its pre-made answers, so the 'AI' isn't very good, nor is it meant to be. -->
 
     <body>
         
@@ -27,12 +30,15 @@
             </div>
 
             <textarea class="answer" id="answer" rows="4" cols="50" contenteditable></textarea><br> 
+            <!-- Here so that users can type in answers and 'interact' with the 'AI'. -->
 
             <button onclick="nextQuestion()">Next Question</button>
 
             <div id="imageContainer">
 
                 <img id="questionImage" src="hello.jpg" alt="Question Image">
+                <!-- Image sourced/taken from https://www.hrmanagementapp.com/how-fill-uber-competitive-hr-executive-job/ -->
+                <!-- I originally wanted to use a camera and have users basically practice eye contact but I thought it would be funnier if it was just a jpg of a random man. Highlights how low-budget this really is, and also emulates the feeling of those early-days simulators you find online by following weird links posted on Twitter or something by random people. -->
 
             </div>
 
@@ -43,3 +49,6 @@
     </body>
 
 </html>
+
+<!-- So originally the idea was for this to be a pet simulator, but then I realised that the domain is too large so I switched it to an interview simulator that's aimed at people in their 3rd year/finishing their 3rd year of their bachelor's degree and are so painfully people-shy and avoidant and anti-social that this probably will actually help them with practicing for their interview without having to talk to actual people (I have friends like this). -->
+<!-- Originally I also considered recording myself asking the questions and inserting them in each section but I did not want videos of myself floating around on the internet so that idea was vetoed immediately after conception. 'hello.jpg' fits the theme of a random, not-made-by-a-business-looking-for-your-hard-earned-cash-just-because-you-don't-know-how-to-talk-to-people-simulator you would find online better anyways. -->

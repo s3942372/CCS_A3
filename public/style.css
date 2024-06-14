@@ -1,3 +1,5 @@
+/* I really tried to replicate the feeling of those random simulators and quizzes you would find online. */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -8,6 +10,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+/* Image sourced/taken from https://www.iqumulate.com/careers/ */
+/* The background was originally white but I thought that that was too plain and then thought it would be funny to insert a collage of faces staring at the user in the background. The reasoning is that these are all the previous successful hires who got hired through the simulator and so you're 'staring in the face of success'. It was also 4 A.M. when I made this decision and I had work in 5 hours so that may have influenced what I was doing. */
 
 .container {
     max-width: 600px;
@@ -50,3 +54,6 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* The colour choices were made when I looked up corporate colours on Google. The colours that showed up the mosr were white, blue and navy. */
+/* I thought using corporate colours was a good idea since this is technically a simulator for job interviews. */

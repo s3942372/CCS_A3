@@ -21,6 +21,7 @@ const questions = [
     "Goodbye.",
     "",
 ];
+// All the questions that appear in text were written here. If I had more time or no other assignments I would write a lot more and get really wacky self aware with them but since it technically is just a simple little simulator I settled with only having the most basic, re-occurring job interview questions.
 
 const responses = [
     "Hello, I am Chris, and sometimes I am Christine. It depends on which browser you are currently using. I will be helping you practice for your interview today. Now why don't you tell me about yourself.",
@@ -45,6 +46,7 @@ const responses = [
     "Thank you for coming. If we decide to hire you, you will recieve a response within a month time. Goodbye.",
     "Have a good day.",
 ];
+// Here are all the standard responses for the answers the users type in. These are 'spoken' out loud by the 'AI's' voice. Once again, if I had more time I would make some a lot more self-aware and introspective but had to settle with generic replies as I can't predict exactly what people would type in.
 
 const images = [
     "hello.jpg",
@@ -69,15 +71,17 @@ const images = [
     "hello.jpg",
     "hello.jpg",
 ];
+// It's all just the same picture of the same man. I initially wanted different poses or people but then I thought that that looked bad. Also of the 5 different browsers I tested the simulator on, 3 of them had a male voice do the voicelines so I settled for the image of a guy.
 
 let currentQuestionIndex = 0;
 
+// Here are other responses made by the 'AI' depending on certain words you typed in the response box. I tried to make it so that there needs to be multiple trigger words to trigger a certain response or so that certain responses can only be triggered when the word is inputted for a certain question but all those attempts have failed.
 function nextQuestion() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
         const answer = document.getElementById("answer").value.toLowerCase().trim();
         let response;
-        if (answer.includes("strength") /*|| question.includes("weaknesses")*/ ) {
+        if (answer.includes("strength") /*|| question.includes("strengths") <= I tried to make it so that the question asked had to include the word 'strengths' while the answer included the word 'strength' for this answer to be triggered. It did not work and I did not have time to try something else.*/ ) {
             response = "Your strength is noted.";
         } else if (answer.includes("weakness")) {
             response = "Acknowledged. It's good to be self-aware.";
@@ -139,32 +143,37 @@ function nextQuestion() {
         alert("Interview is over. Thank you!");
     }
 }
+// Again like I said for the standard responses and the questions, I would have liked to make some responses a lot more self-aware. I still had to settle with generic replies with these as I can't predict everything that people would type in and create a response for it.
+// If the user types in a trigger word in reply to a different question these responses would still get triggered too which is annoying and I didn't figure out how to fix it, but hey, it fits the aesthetic of a cheap online simulator.
 
 function speak(text) {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
     synth.speak(utterance);
 }
+// I liked the idea of people thinking this was just going to be a type-and-read simulator, then boom. An 'AI' is talking to you.
 
-var speech = true; 
-        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
+// var speech = true; 
+//         window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
   
-        const recognition = new SpeechRecognition(); 
-        recognition.interimResults = true; 
-        const answer = document.querySelector('.answer'); 
-        answer.appendChild(p); 
+//         const recognition = new SpeechRecognition(); 
+//         recognition.interimResults = true; 
+//         const answer = document.querySelector('.answer'); 
+//         answer.appendChild(p); 
   
-        recognition.addEventListener('result', e => { 
-            const transcript = Array.from(e.results) 
-                .map(result => result[0]) 
-                .map(result => result.transcript) 
-                .join('') 
+//         recognition.addEventListener('result', e => { 
+//             const transcript = Array.from(e.results) 
+//                 .map(result => result[0]) 
+//                 .map(result => result.transcript) 
+//                 .join('') 
   
-            document.getElementById("answer").innerHTML = transcript; 
-            console.log(transcript); 
-        }); 
+//             document.getElementById("answer").innerHTML = transcript; 
+//             console.log(transcript); 
+//         }); 
           
-        if (speech == true) { 
-            recognition.start(); 
-            recognition.addEventListener('end', recognition.start); 
-        } 
+//         if (speech == true) { 
+//             recognition.start(); 
+//             recognition.addEventListener('end', recognition.start); 
+//         } 
+
+// I tried to make it so that the user speaks into the microphone and speech is converted to text but it did not work. Went on all the forums looking for answers and even consulted ChatGPT but nothing had the answer. I'm guessing that to do this something heavier than standard vanilla Javascript is required.
