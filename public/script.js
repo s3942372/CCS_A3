@@ -2,6 +2,7 @@ const questions = [
     "Tell me about yourself.",
     "What is your personal background?",
     "What is your work background?",
+    "What do you know about our business?",
     "What are your strengths?",
     "What are your weaknesses?",
     "Why do you want to work for our company?",
@@ -14,10 +15,11 @@ const questions = [
 ];
 
 const responses = [
-    "Hello, I am Chris, and sometimes I am Christine. It depends. I will be helping you practice for your interview today.",
+    "Hello, I am Chris, and sometimes I am Christine. It depends on which browser you are currently using. I will be helping you practice for your interview today.",
     "That's great! Let's move on to the next question.",
     "I see.",
     "Experience is valuable.",
+    "I'll be taking note of that.",
     "Impressive! Keep it up.",
     "Everyone has weaknesses. It's good that you're aware of yours.",
     "Interesting. Our company values align well with your goals.",
@@ -56,7 +58,7 @@ function nextQuestion() {
             response = "Acknowledged. It's good to be self-aware.";
         } else if (answer.includes("interested") || answer.includes("passion")) {
             response = "That's fantastic to hear!";
-        } else if (answer.includes("Chinese") || answer.includes("family")) {
+        } else if (answer.includes("Chinese") || question.includes("personal background")) {
             response = "That's fantastic, we have to fill the quotas.";
         } else if (answer.includes("Indigenous") || answer.includes("family")) {
             response = "That's fantastic, we have to fill the quotas.";
@@ -78,7 +80,9 @@ function nextQuestion() {
             response = "That's fantastic, it's great to have people who know what they're doing!";
         } else if (answer.includes("salary")) {
             response = "You'll be getting the standard entry level salary, and if you do well we can discuss a raise.";
-        }else {
+        } else if (answer.includes("nothing")) {
+            response = "You'll be getting the standard entry level salary, and if you do well we can discuss a raise.";
+        } else {
             response = responses[currentQuestionIndex];
         }
         document.getElementById("question").innerText = question;
