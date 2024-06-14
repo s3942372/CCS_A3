@@ -12,8 +12,10 @@ const questions = [
     "Where do you see yourself in five years?",
     "Why should we hire you?",
     "Can you give an example of a time you demonstrated leadership?",
+    "Tell me about a challenge or conflict you overcame at work.",
     "What is your preferred work style or management style?",
     "How do you handle stress?",
+    "How would you handle conflict in the workplace?",
     "Do you have any questions for us?",
     "Thank you for coming.",
     "Goodbye.",
@@ -35,8 +37,10 @@ const responses = [
     "Ambitious goals! We appreciate your vision.",
     "You make a compelling case. Let's see what else you have to offer.",
     "Oh my. That's certainly something.",
+    "Oh wow. That's amazing.",
     "Hmm, we'll see how you fit in.",
     "Alright, the questions are almost over now.",
+    "Let me note that down.",
     "I'm afraid I can't say.",
     "If we decide to hire you, you will recieve a response within a month time.",
     "Have a good day.",
@@ -64,7 +68,7 @@ function nextQuestion() {
         const question = questions[currentQuestionIndex];
         const answer = document.getElementById("answer").value.toLowerCase().trim();
         let response;
-        if (answer.includes("strength") || question.includes("weaknesses")) {
+        if (answer.includes("strength") /*|| question.includes("weaknesses")*/ ) {
             response = "Your strength is noted.";
         } else if (answer.includes("weakness")) {
             response = "Acknowledged. It's good to be self-aware.";
