@@ -58,7 +58,7 @@ function nextQuestion() {
             response = "Acknowledged. It's good to be self-aware.";
         } else if (answer.includes("interested") || answer.includes("passion")) {
             response = "That's fantastic to hear!";
-        } else if (answer.includes("Chinese") || question.includes("personal background")) {
+        } else if (answer.includes("Chinese") || question.includes("family")) {
             response = "That's fantastic, we have to fill the quotas.";
         } else if (answer.includes("Indigenous") || answer.includes("family")) {
             response = "That's fantastic, we have to fill the quotas.";
@@ -80,8 +80,8 @@ function nextQuestion() {
             response = "That's fantastic, it's great to have people who know what they're doing!";
         } else if (answer.includes("salary")) {
             response = "You'll be getting the standard entry level salary, and if you do well we can discuss a raise.";
-        } else if (answer.includes("nothing")) {
-            response = "You'll be getting the standard entry level salary, and if you do well we can discuss a raise.";
+        } else if (answer.includes("know nothing")) {
+            response = "That's dissapointing. You should have done your research. Now I think that you're not interested, and that you won't give 100% in your work here.";
         } else {
             response = responses[currentQuestionIndex];
         }
