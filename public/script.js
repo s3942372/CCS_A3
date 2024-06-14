@@ -23,9 +23,9 @@ const questions = [
 ];
 
 const responses = [
-    "Hello, I am Chris, and sometimes I am Christine. It depends on which browser you are currently using. I will be helping you practice for your interview today.",
-    "That's great! Let's move on to the next question.",
-    "I see.",
+    "Hello, I am Chris, and sometimes I am Christine. It depends on which browser you are currently using. I will be helping you practice for your interview today. Now why don't you tell me about yourself.",
+    "That's great! Let's move on to the next question. What is your personal background?",
+    "I see, and what is your work background?",
     "Experience is valuable.",
     "I'll be taking note of that.",
     "Impressive! Keep it up.",
@@ -33,7 +33,7 @@ const responses = [
     "Interesting. Our company values align well with your goals.",
     "I see, I see.",
     "Alright, that's certainly something.",
-    "Mmhmm, we'll take that into consideration.",
+    "Mm hmm, we'll take that into consideration.",
     "Ambitious goals! We appreciate your vision.",
     "You make a compelling case. Let's see what else you have to offer.",
     "Oh my. That's certainly something.",
